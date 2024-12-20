@@ -1,5 +1,8 @@
 {
-    "Home": "Inicio",
+    "home": "inicio",
+    "courses": "cursos",
+    "about": "Acerca de",
+    "contact": "contacto",
     "(and :count more error)": "(y :count error más)",
     "(and :count more errors)": "(y :count error más)|(y :count errores más)|(y :count errores más)",
     "30 Days": "30 Días",

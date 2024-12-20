@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+@import '../colors.scss';
+
+
+.user{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    align-items: center;
+    font-family: "Space Grotesk", serif;
+    color: $text-color;
+    padding: 0 240px;
+    
+    
+    h2{
+        grid-column: span 4;
+        font-size: 1.3rem;
+        justify-self: center;
+    }
+    dt{
+        font-weight: bold;
+        color: $light-color;
+        font-size: 1.2rem;
+        padding-bottom: 5px;
+        border-bottom: 1px solid $light-color;
+    }
+    p{
+        font-size: 1.2rem;
+        margin-right: 10px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid $light-color;
+        border-right: 1px solid $light-color;
+    }
+
+    a{
+        background: $next-color;
+        border: none;
+        border-radius: 10px;
+        color: $primary-color;
+        width: 100px;
+        
+        text-decoration: none;
+        font-family: "Space Grotesk", serif;
+        font-weight: 500;
+        text-align: center;
+        padding: 10px;
+    }
+    form{
+        grid-column: 3/4;
+    }
+}
+
+button.deleteUser{
+    background: $variant-color;
+    color: $primary-color;
+    font-family: "Space Grotesk", serif;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100px;
+    height: 50px;
+    font-weight: 500;
+    cursor:pointer;
+    
+}
