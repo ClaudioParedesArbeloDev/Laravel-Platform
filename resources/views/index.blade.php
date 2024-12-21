@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Claudio Paredes Platform')
+@section('title', 'Code & Lens')
     
 
 

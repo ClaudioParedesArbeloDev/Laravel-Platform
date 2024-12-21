@@ -3,20 +3,20 @@
 
 <head>
     <link rel="stylesheet" href="{{ asset('sass/index/index.css') }}">
-    <link rel="shortcut icon" href="{{ asset('images/rb_4299.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('images/logo.png') }}" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Claudio Paredes Platform: Aprende y crece en programación con cursos, blogs y más.">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/718dcffbc3.js" crossorigin="anonymous"></script>
-    <title>@yield('title', 'Claudio Paredes')</title>
+    <title>@yield('title', 'Code & Lens')</title>
 </head>
 
 <body>
     <header class="header">
         <a href="{{ route('home') }}" class="logo">
-            <img src="{{ asset('images/rb_4299.png') }}" alt="Logo" class="logoImage">
+            <img src="{{ asset('images/logo.png') }}" alt="Logo" class="logoImage">
             <div>
                 <p class="textLogo1">Code & Lens</p>
                 <p class="textLogo2"> PLATFORM</p>
