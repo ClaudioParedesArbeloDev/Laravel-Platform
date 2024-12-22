@@ -19,7 +19,7 @@
             <img src="{{ asset('images/logo.png') }}" alt="Logo" class="logoImage">
             <div>
                 <p class="textLogo1">Code & Lens</p>
-                <p class="textLogo2"> PLATFORM</p>
+                <p class="textLogo2">PLATFORM</p>
             </div>
         </a>
         <nav class="navIndex">
