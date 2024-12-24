@@ -6,27 +6,35 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
-
     /**
      * The attributes that are mass assignable.
      *
-     * @var list<string>
+     * @var array<int, string>
      */
     protected $fillable = [
         'name',
+        'lastname',
+        'address',
+        'phone',
         'email',
+        'dni',
+        'date_birth',
+        'username',
+        'avatar',
         'password',
+        'role',
     ];
 
     /**
      * The attributes that should be hidden for serialization.
      *
-     * @var list<string>
+     * @var array<int, string>
      */
     protected $hidden = [
         'password',
@@ -44,5 +52,37 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    // Mutators and Accessors
+    protected function name(): Attribute
+    {
+        return Attribute::make(
+            set: fn($value) => strtolower($value),
+            get: fn($value) => ucwords($value)
+        );
+    }
+
+    protected function lastname(): Attribute
+    {
+        return Attribute::make(
+            set: fn($value) => strtolower($value),
+            get: fn($value) => ucwords($value)
+        );
+    }
+
+    protected function address(): Attribute
+    {
+        return Attribute::make(
+            set: fn($value) => strtolower($value),
+            get: fn($value) => ucwords($value)
+        );
+    }
+
+    protected function email(): Attribute
+    {
+        return Attribute::make(
+            set: fn($value) => strtolower($value),
+        );
     }
 }
