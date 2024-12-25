@@ -27,25 +27,5 @@ Route::middleware(LocaleCookie::class)->group(function () {
 
     Route::resource('blogs', BlogController::class);
 
-    /* Route::get('/blogs', [BlogController::class, 'index'])
-        ->name('blogs');
-    
-    Route::get('/blogs/{id}', [BlogController::class, 'show'])
-        ->name('blog');
-    
-    Route::get('/blogs/create', [BlogController::class, 'create'])
-        ->name('create');
-    
-    Route::post('/blogs', [BlogController::class, 'store'])
-        ->name('store');
-    
-    Route::get('/blogs/{id}/edit', [BlogController::class, 'edit'])
-        ->name('edit');
-    
-    Route::put('/blogs/{id}', [BlogController::class, 'update'])
-        ->name('update');
-    
-    Route::delete('/blogs/{id}', [BlogController::class, 'destroy'])
-        ->name('delete'); */
-    
+       
 });

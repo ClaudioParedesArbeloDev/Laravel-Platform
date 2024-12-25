@@ -29,7 +29,7 @@
             <a href="">
                 <li>{{ __('courses') }}</li>
             </a>
-            <a href="">
+            <a href="{{route('blogs.index')}}">
                 <li>{{ __('Blog') }}</li>
             </a>
             <a href="">

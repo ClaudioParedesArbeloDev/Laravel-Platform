@@ -11,12 +11,12 @@ class Blog extends Model
 {
     use HasFactory;
 
-    protected function casts(): array
+    /* protected function casts(): array
     {
         return [
             'published_at' => 'datetime',
         ];
-    }
+    } */
 
     protected function title(): Attribute 
     {

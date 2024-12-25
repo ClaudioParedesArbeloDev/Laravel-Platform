@@ -63,6 +63,13 @@
   width: 600px;
 }
 
+.formText {
+  border: none;
+  padding: 10px;
+  width: 600px;
+  height: auto;
+}
+
 .formButton {
   padding: 10px;
   border: none;

@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('author');
             $table->text('body');
-            $table->timestamp('published_at');
             $table->timestamps();
         });
     }

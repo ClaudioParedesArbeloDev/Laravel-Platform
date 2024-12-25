@@ -29,7 +29,7 @@
     
     <label class="formLabel" for="body">{{__('Body')}}:</label>
     
-    <input class="formInput" type="text" id="body" name="body" >
+    <textarea class="formText" rows="10" type="text-area" id="body" name="body" ></textarea>
     
     
 
