@@ -11,5 +11,20 @@ class Blog extends Model
 {
     use HasFactory;
 
-    protected $table = 'blogs';
+    protected function casts(): array
+    {
+        return [
+            'published_at' => 'datetime',
+        ];
+    }
+
+    protected function title(): Attribute 
+    {
+        return Attribute::make(
+            set: Function($value){
+                return strtolower($value);
+            });
+    }
+
+
 }

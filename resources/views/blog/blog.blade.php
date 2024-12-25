@@ -6,6 +6,6 @@
 
 @section('content')
 
-    <h1>Esto es el blog</h1>
+    <h1>Esto es el blogssss</h1>
     
 @endsection

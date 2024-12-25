@@ -1,4 +1,10 @@
-{
+{   
+    "Body": "Cuerpo",
+    "Author": "Autor",
+    "Image": "Imagen",
+    "Category": "Categoría",
+    "Title": "Título",
+    "Create Blog": "Crear Blog",
     "home": "inicio",
     "courses": "cursos",
     "about": "Acerca de",

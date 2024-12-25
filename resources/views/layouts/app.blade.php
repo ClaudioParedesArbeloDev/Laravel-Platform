@@ -55,7 +55,7 @@
        
         <div class="theme-toggle">
             <input type="checkbox" id="switch" />
-            <label for="switch">
+            <label class="toggle" for="switch">
                 <i class="fa-solid fa-sun sun"></i>
                 <i class="fa-solid fa-moon moon"></i>
             </label>
