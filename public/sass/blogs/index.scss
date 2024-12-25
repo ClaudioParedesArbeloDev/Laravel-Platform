@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+@import '../colors.scss';
+
+
+.blogsContainer{
+    font-family: "Space Grotesk", serif;
+    width: 60%;
+    justify-self: center;
+}
+
+.categories{
+    display: flex;
+    justify-content: center;
+}
+
+.options{
+    font-family: "Space Grotesk", serif;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1em;
+    margin: 0 25px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    list-style: none;
+  }
+  
+  .options::before {
+    margin-left: auto;
+  }
+  
+  .options::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: var(--secondary);
+    display: block;
+    transition: 0.5s;
+  }
+
+  .options::before{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: var(--secondary);
+    display: block;
+    transition: 0.5s;
+  }
+  
+  .options:hover::after {
+    width: 100%;
+  }
+
+  .options:hover::before{
+    width: 100%;
+  }
+
+  .news{
+    font-family: "Space Grotesk", serif;
+    font-size: 1.5em;
+    color: var(--text-primary);
+    justify-self: center;
+    padding: 30px 0;
+    letter-spacing: 10px;
+  }
+
+  .blog{
+    
+    justify-self: center;
+    font-family: "Montserrat", serif;
+    color: var(--text-primary);
+  }
+
+  .blogContent{
+    border: 2px solid var(--secondary);
+    padding: 20px;
+  }
+
+  .blogTitle{
+    justify-self: start;
+    font-size: 1.5rem;
+  }
+
+  .blogCategory{
+    color: var(--text-secondary);
+  }

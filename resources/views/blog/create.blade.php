@@ -23,6 +23,10 @@
     
     <input class="formInput" type="text" id="image" name="image" >
     
+    <label class="formLabel" for="image2">{{__('Image2')}}:</label>
+    
+    <input class="formInput" type="text" id="image2" name="image2" >
+    
     <label class="formLabel" for="author">{{__('Author')}}:</label>
     
     <input class="formInput" type="text" id="author" name="author" >

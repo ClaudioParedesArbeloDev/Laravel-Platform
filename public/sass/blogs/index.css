@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap");
+:root {
+  --background: #e0e1dd;
+  --surface: #ade8f4;
+  --text-primary: #0d1b2a;
+  --text-secondary: #1b263b;
+  --primary: #778da9;
+  --primary-variant: #415a77;
+  --secondary: #00b4d8;
+  --secondary-variant: #0096c7;
+  --success: #85BB65;
+  --warning: #FFAA00;
+  --error: #B22222;
+  --card-background: #F5F1ED;
+  --border: #DED6D1;
+  --icon-color: #B28C2F;
+  --toggle-bg: #dbd2b5;
+  --toggle-thumb: #D4AF37;
+}
+
+[data-theme=dark] {
+  --background: #0d1b2a;
+  --surface: #1b263b;
+  --text-primary: #e0e1dd;
+  --text-secondary: #BDBDBD;
+  --primary: #415a77;
+  --primary-variant: #778da9;
+  --secondary: #808080;
+  --secondary-variant: #696969;
+  --success: #32CD32;
+  --warning: #FF8C00;
+  --error: #DC143C;
+  --card-background: #222222;
+  --border: #444444;
+  --icon-color: #210d69;
+  --toggle-bg: #333333;
+  --toggle-thumb: #B8860B;
+}
+
+.blogsContainer {
+  font-family: "Space Grotesk", serif;
+  width: 60%;
+  justify-self: center;
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+}
+
+.options {
+  font-family: "Space Grotesk", serif;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 1em;
+  margin: 0 25px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  list-style: none;
+}
+
+.options::before {
+  margin-left: auto;
+}
+
+.options::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: var(--secondary);
+  display: block;
+  transition: 0.5s;
+}
+
+.options::before {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: var(--secondary);
+  display: block;
+  transition: 0.5s;
+}
+
+.options:hover::after {
+  width: 100%;
+}
+
+.options:hover::before {
+  width: 100%;
+}
+
+.news {
+  font-family: "Space Grotesk", serif;
+  font-size: 1.5em;
+  color: var(--text-primary);
+  justify-self: center;
+  padding: 30px 0;
+  letter-spacing: 10px;
+}
+
+.blog {
+  justify-self: center;
+  font-family: "Montserrat", serif;
+  color: var(--text-primary);
+}
+
+.blogContent {
+  border: 2px solid var(--secondary);
+  padding: 20px;
+}
+
+.blogTitle {
+  justify-self: start;
+  font-size: 1.5rem;
+}
+
+.blogCategory {
+  color: var(--text-secondary);
+}/*# sourceMappingURL=index.css.map */
