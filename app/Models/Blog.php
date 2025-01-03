@@ -18,13 +18,10 @@ class Blog extends Model
         ];
     } */
 
-    protected function title(): Attribute 
-    {
-        return Attribute::make(
-            set: Function($value){
-                return strtolower($value);
-            });
-    }
+    
+    
+        
+    
 
 
 }

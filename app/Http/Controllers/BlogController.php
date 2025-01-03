@@ -27,9 +27,10 @@ class BlogController extends Controller
 
         $blog->title=$request->title;
         $blog->category=$request->category;
-        $blog->image=$request->image;
         $blog->author=$request->author;
+        $blog->anticipated=$request->anticipated;
         $blog->body=$request->body;
+        $blog->image=$request->image;
 
         $blog->save();
 
@@ -58,7 +59,6 @@ class BlogController extends Controller
 
         $blog->title=$request->title;
         $blog->category=$request->category;
-        $blog->image=$request->image;
         $blog->author=$request->author;
         $blog->body=$request->body;
 

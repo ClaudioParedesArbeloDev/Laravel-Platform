@@ -37,57 +37,38 @@
   --toggle-thumb: #B8860B;
 }
 
+.blogImage {
+  justify-self: center;
+  width: 100%;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.8;
+}
+
+.select {
+  margin: 10px 0 30px 0;
+}
+
 .blogsContainer {
   font-family: "Space Grotesk", serif;
-  width: 60%;
+  width: 70%;
   justify-self: center;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
 }
 
-.categories {
-  display: flex;
-  justify-content: center;
+.select {
+  grid-column: 1/2;
 }
-
-.options {
-  font-family: "Space Grotesk", serif;
+.select select {
+  background: var(--card-background);
   color: var(--text-primary);
-  text-decoration: none;
-  font-size: 1em;
-  margin: 0 25px;
-  border: none;
-  background: none;
-  cursor: pointer;
-  list-style: none;
+  font-family: "Space Grotesk", serif;
+  padding: 10px;
 }
-
-.options::before {
-  margin-left: auto;
-}
-
-.options::after {
-  content: "";
-  width: 0%;
-  height: 2px;
-  background: var(--secondary);
-  display: block;
-  transition: 0.5s;
-}
-
-.options::before {
-  content: "";
-  width: 0%;
-  height: 2px;
-  background: var(--secondary);
-  display: block;
-  transition: 0.5s;
-}
-
-.options:hover::after {
-  width: 100%;
-}
-
-.options:hover::before {
-  width: 100%;
+.select select option {
+  padding: 10px;
 }
 
 .news {
@@ -97,24 +78,73 @@
   justify-self: center;
   padding: 30px 0;
   letter-spacing: 10px;
+  grid-column: 1/2;
 }
 
 .blog {
   justify-self: center;
   font-family: "Montserrat", serif;
   color: var(--text-primary);
+  grid-column: 1/2;
 }
 
 .blogContent {
   border: 2px solid var(--secondary);
   padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 6 1fr;
+}
+
+.blogIndImage {
+  aspect-ratio: 16/9;
+  width: 100%;
+  grid-column: 1/2;
+  grid-row: span 5;
 }
 
 .blogTitle {
   justify-self: start;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 30px;
+  margin: 0;
+  grid-row: 1/3;
+  grid-column: 2/2;
+}
+
+.blogAuthor {
+  grid-row: 4;
+  grid-column: 2/2;
+  font-size: 0.8rem;
+  margin: 0;
 }
 
 .blogCategory {
   color: var(--text-secondary);
+  grid-row: 3;
+  grid-column: 2/2;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.blogBody {
+  grid-row: 5;
+  grid-column: 2/2;
+  font-size: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-clamp: 1;
+}
+.blogBody p {
+  margin: 0;
+}
+
+.lastBlog {
+  grid-column: 2/2;
+  grid-row: 1;
+  align-self: center;
+  justify-self: center;
+  color: var(--text-primary);
 }/*# sourceMappingURL=index.css.map */

@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('category');
-            $table->string('image')->nullable();
-            $table->string('image2')->nullable();
             $table->string('author');
-            $table->text('body');
+            $table->mediumText('anticipated');
+            $table->longText('body');
+            $table->string('image');
             $table->timestamps();
         });
     }
