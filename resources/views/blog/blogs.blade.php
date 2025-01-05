@@ -24,12 +24,15 @@
                 <div class="blogContent">
                     <img src="{{ $blog->image }}" alt="blogImage" class="blogIndImage">
                     <h3 class="blogTitle">{{ $blog->title }}</h3>
-                    <p class="blogAuthor">{{ $blog->author }} {{$blog->created_at}}</p>
                     <p class="blogCategory">{{ $blog->category }}</p>
+                    <p class="blogAuthor">{{ $blog->author }} {{$blog->created_at->format('d/m/Y')}}</p>
                     <p class="blogBody">{!! $blog->anticipated !!}</p>
                     <div class="blogFooter">
-                        <button>{{__('Read More')}}</button>
-                        <i class="fa-regular fa-message"></i>
+                        <a href="{{route('blogs.show', $blog)}}" class="btnArt">{{__('Read More')}}</a>
+                        <div>
+                            <i class="fa-regular fa-message"></i>
+                            <span>0</span>
+                        </div>
                     </div>
 
                 </div>

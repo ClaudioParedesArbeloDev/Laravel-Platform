@@ -11,17 +11,11 @@ class Blog extends Model
 {
     use HasFactory;
 
-    /* protected function casts(): array
-    {
-        return [
-            'published_at' => 'datetime',
-        ];
-    } */
-
+     
+        public function getRouteKeyName()
+        {
+            return 'title';
+        }
     
-    
-        
-    
-
 
 }

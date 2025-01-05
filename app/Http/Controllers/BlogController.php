@@ -37,26 +37,23 @@ class BlogController extends Controller
         return redirect('/blogs');
     }
 
-    public function show($id)
+    public function show(Blog $blog)
     
     {
-        $blog = Blog::find($id);
-
+        
         return view('blog.blog', compact('blog'));
     }
 
-    public function edit($id)
+    public function edit(Blog $blog)
     
     {
-        $blog = Blog::find($id);
-
+        
         return view('blog.editblog', compact('blog'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Blog $blog)
     {
-        $blog = Blog::find($id);
-
+        
         $blog->title=$request->title;
         $blog->category=$request->category;
         $blog->author=$request->author;
@@ -67,10 +64,9 @@ class BlogController extends Controller
         return redirect('/blogs/$id');
     }
 
-    public function destroy($id)
+    public function destroy(Blog $blog)
     {
-        $blog = Blog::find($id);
-
+        
         $blog->delete();
 
         return redirect('/blogs');
