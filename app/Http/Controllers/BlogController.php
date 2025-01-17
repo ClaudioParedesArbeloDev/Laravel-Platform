@@ -6,6 +6,8 @@ use App\Models\Blog;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Str;
+
 class BlogController extends Controller
 {
     public function index()
@@ -31,6 +33,9 @@ class BlogController extends Controller
         $blog->anticipated=$request->anticipated;
         $blog->body=$request->body;
         $blog->image=$request->image;
+        $blog->slug = Str::slug($request->title);
+
+        
 
         $blog->save();
 

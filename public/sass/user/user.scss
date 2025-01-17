@@ -8,7 +8,7 @@
     justify-content: center;
     align-items: center;
     font-family: "Space Grotesk", serif;
-    color: $text-color;
+    color: var(--text-primary);
     padding: 0 240px;
     
     
@@ -19,26 +19,25 @@
     }
     dt{
         font-weight: bold;
-        color: $light-color;
+        color: var(--primary-variant);
         font-size: 1.2rem;
         padding-bottom: 5px;
-        border-bottom: 1px solid $light-color;
+        border-bottom: 1px solid var(--primary-variant);
     }
     p{
         font-size: 1.2rem;
         margin-right: 10px;
         padding-bottom: 5px;
-        border-bottom: 1px solid $light-color;
-        border-right: 1px solid $light-color;
+        border-bottom: 1px solid var(--primary-variant);
+        border-right: 1px solid var(--primary-variant);
     }
 
     a{
-        background: $next-color;
+        background: var(--success);
         border: none;
         border-radius: 10px;
-        color: $primary-color;
+        color: var(--background);
         width: 100px;
-        
         text-decoration: none;
         font-family: "Space Grotesk", serif;
         font-weight: 500;
@@ -51,8 +50,8 @@
 }
 
 button.deleteUser{
-    background: $variant-color;
-    color: $primary-color;
+    background: var(--error);
+    color: var(--background);
     font-family: "Space Grotesk", serif;
     border: none;
     border-radius: 10px;

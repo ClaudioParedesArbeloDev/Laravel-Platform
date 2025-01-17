@@ -8,20 +8,20 @@
 
     <link rel="stylesheet" href="{{ asset('sass/users/users.css') }}">
     <div class="usersContainer">
-    <h2 class="usersListTitle">Users List</h2>
+    <h2 class="usersListTitle">{{__('Users List')}}</h2>
     <table class="usersList">
         <thead>
             <tr class="usersTableHeader">
                 <th>ID</th>
-                <th>Name</th>
-                <th>LastName</th>
-                <th>Address</th>
-                <th>Phone</th>
+                <th>{{__('Name')}}</th>
+                <th>{{__('Lastname')}}</th>
+                <th>{{__('Address')}}</th>
+                <th>{{__('Phone')}}</th>
                 <th>DNI</th>
-                <th>Email</th>
-                <th>Date of birth</th>
-                <th>Username</th>
-                <th>Editar</th>
+                <th>{{__('Email')}}</th>
+                <th>{{__('Date of Birth')}}</th>
+                <th>{{__('Username')}}</th>
+                <th>{{__('Edit')}}</th>
 
             </tr>  
         </thead>
@@ -37,7 +37,7 @@
         <td>{{ $user->email }}</td>
         <td>{{ $user->date_birth }}</td>
         <td>{{ $user->username }}</td>
-        <td><a href="/users/{{$user->id}}">Editar</a></td>
+        <td><a href="/users/{{$user->id}}">{{__('Edit')}}</a></td>
         </tr>
          @endforeach
     </tbody>

@@ -4,7 +4,7 @@
 .titleCreate{
     font-family: "Space Grotesk", serif;
     font-size: 2rem;
-    color: $light-color;
+    color: var(--text-primary);
     text-align: center;
     height: 80px;
     margin: 30px;
@@ -19,11 +19,12 @@
     label{
         font-family: "Space Grotesk", serif;
         font-size: 1.3rem;
-        color: $light-color;
+        color: var(--text-primary);
     }
     input{
         font-family: "Space Grotesk", serif;
-        background: rgba($light-color, 0.8);
+        background: var(--primary-variant);
+        color: var(--background);
         border: none;
         border-radius: 10px;
         height: 30px;
@@ -31,19 +32,32 @@
         margin: 20px 5px 20px 5px;
         font-size: 1rem;
         font-weight: bold;
-        padding: 5px;
+        padding: 10px;
     }
     button{
         font-family: "Space Grotesk", serif;
         font-size: 1.2rem;
-        background: $light-color;
+        background: var(--primary-variant);
+        color: var(--background);
         border: none;
         border-radius: 10px;
-        height: 30px;
+        height: 40px;
         width: 300px;
         margin: 20px 5px 20px 5px;
         grid-column: span 4;
         justify-self: center;
         cursor: pointer;
     }
+}
+
+.btnCancel{
+    font-family: "Space Grotesk", serif;
+    font-size: 1rem;
+    background: var(--error);
+    color: var(--background);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    justify-self: center;
+    text-decoration: none;
 }
