@@ -35,7 +35,7 @@
             <a href="">
                 <li>{{ __('about') }}</li>
             </a>
-            <a href="">
+            <a href="{{route('contact.index')}}">
                 <li>{{ __('contact') }}</li>
             </a>
         </nav>
@@ -49,10 +49,10 @@
             <a href="{{ route('login') }}" class="login"><i class="fa-solid fa-user">
                     <p>{{ __('Log in') }}</p>
                 </i></a>
-            
-            
+
+
         </div>
-       
+
         <div class="theme-toggle">
             <input type="checkbox" id="switch" />
             <label class="toggle" for="switch">

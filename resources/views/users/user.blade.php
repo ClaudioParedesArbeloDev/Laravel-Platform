@@ -1,16 +1,16 @@
 @extends('layouts.app')
 
 @section('title', 'Code & Lens - User')
-    
+
 
 
 @section('content')
 <link rel="stylesheet" href="{{ asset('sass/user/user.css') }}">
 
     <div class="user">
-        
+
         <h2>{{__('User')}}: {{$user->lastname}}, {{$user->name}}</h2>
-        
+
         <dt>{{__('Name')}}</dt> <p>{{$user->name}}</p>
         <dt>{{__('Lastname')}}</dt> <p>{{$user->lastname}}</p>
         <dt>{{__('Address')}}</dt> <p>{{$user->address}}</p>
@@ -19,11 +19,11 @@
         <dt>DNI:</dt> <p>{{$user->dni}}</p>
         <dt>{{__('Date of Birth')}}:</dt> <p>{{$user->date_birth}}</p>
         <dt>{{__('Username')}}:</dt> <p>{{$user->username}}</p>
-        
+
         <a href="/users/{{$user->id}}/edit">{{__('Edit User')}}</a>
-        
+
         <form action="/users/{{$user->id}}" method="POST" >
-            
+
             @csrf
 
             @method('DELETE')
@@ -53,8 +53,8 @@
   }
 });
 </script>
-        
+
     </div>
-    
-    
+
+
 @endsection

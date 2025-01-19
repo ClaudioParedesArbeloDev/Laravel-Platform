@@ -1,4 +1,7 @@
-{   
+{
+    "Email sent successfully": "Correo electrónico enviado con éxito",
+    "Subject": "Asunto",
+    "Do you want to contact us?": "¿Quieres contactarnos?",
     "Delete User": "Borrar usuario",
     "Edit User": "Editar usuario",
     "User": "Usuario",
