@@ -9,14 +9,33 @@
     <meta name="description"
         content="Claudio Paredes Platform: Aprende y crece en programación con cursos, blogs y más.">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://kit.fontawesome.com/718dcffbc3.js" crossorigin="anonymous"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render={{env('CLAVE_HTML')}}"></script>
+    <script>
+        document.addEventListener('submit', function(e){
+            e.preventDefault();
+        grecaptcha.ready(function() {
+            grecaptcha.execute('{{env('CLAVE_HTML')}}', {action: 'submit'}).then(function(token) {
+
+                let form = e.target;
+                let input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = 'g-recaptcha-response';
+                input.value = token;
+                form.appendChild(input);
+                form.submit();
+            });
+        });
+        })
+    </script>
     <title>@yield('title', 'Code & Lens')</title>
 </head>
 
 <body>
     <header class="header">
         <a href="{{ route('home') }}" class="logo">
-            <img src="{{ asset('images/logo.png') }}" alt="Logo" class="logoImage">
+            {{-- <img src="{{ asset('images/logo.png') }}" alt="Logo" class="logoImage"> --}}
             <div>
                 <p class="textLogo1">Code & Lens</p>
                 <p class="textLogo2">PLATFORM</p>
@@ -32,7 +51,7 @@
             <a href="{{route('blogs.index')}}">
                 <li>{{ __('Blog') }}</li>
             </a>
-            <a href="">
+            <a href="{{route('aboutus')}}">
                 <li>{{ __('about') }}</li>
             </a>
             <a href="{{route('contact.index')}}">

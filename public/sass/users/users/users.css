@@ -37,25 +37,44 @@
   --toggle-thumb: #B8860B;
 }
 
-.blogContainer {
+.usersListTitle {
+  color: var(--text-primary);
   font-family: "Space Grotesk", serif;
-  width: 60%;
+  padding: 30px 0 40px 50px;
   justify-self: center;
 }
 
-.blogCategory {
-  font-size: 0.6em;
-  padding: 10px;
+.usersList {
+  margin: 0 0 50px 0;
   color: var(--text-primary);
-  background: var(--secondary);
-  border-radius: 10px;
+  font-family: "Space Grotesk", serif;
+  text-align: start;
+  border-collapse: collapse;
+  justify-self: center;
 }
 
-.blogTitle {
-  font-size: 2.5em;
-  margin: 20px 0;
+.usersTableHeader th {
+  color: var(--text-primary);
+  font-family: "Space Grotesk", serif;
+  text-align: start;
+  border: 1px solid var(--primary-variant);
+  border-collapse: collapse;
+  padding: 10px;
 }
 
-.blogImage {
-  width: 100%;
-}/*# sourceMappingURL=blog.css.map */
+.usersTableBody td {
+  border: 1px solid var(--primary-variant);
+  border-collapse: collapse;
+  margin: 0px;
+  padding: 10px;
+}
+.usersTableBody td a {
+  font-family: "Space Grotesk", serif;
+  text-decoration: none;
+  color: var(--primary-variant);
+  font-weight: bold;
+}
+
+nav {
+  justify-self: center;
+}/*# sourceMappingURL=users.css.map */

@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('title', 'Code & Lens')
-    
+
 
 
 @section('content')
 
-    <link rel="stylesheet" href="{{ asset('sass/users/users.css') }}">
+    <link rel="stylesheet" href="{{ asset('sass/users/users/users.css') }}">
     <div class="usersContainer">
     <h2 class="usersListTitle">{{__('Users List')}}</h2>
     <table class="usersList">
@@ -23,7 +23,7 @@
                 <th>{{__('Username')}}</th>
                 <th>{{__('Edit')}}</th>
 
-            </tr>  
+            </tr>
         </thead>
         <tbody class="usersTableBody">
         @foreach ($users as $user)
@@ -39,16 +39,16 @@
         <td>{{ $user->username }}</td>
         <td><a href="/users/{{$user->id}}">{{__('Edit')}}</a></td>
         </tr>
-         @endforeach
+        @endforeach
     </tbody>
-        
+
     </table>
 
     {{ $users->links() }}
 
     </div>
-    
-   
-    
-    
+
+
+
+
 @endsection

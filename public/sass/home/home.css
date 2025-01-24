@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap");
 :root {
   --background: #e0e1dd;
-  --surface: #ade8f4;
+  --surface: #b5d9e0;
   --text-primary: #0d1b2a;
   --text-secondary: #1b263b;
   --primary: #778da9;
@@ -37,44 +37,32 @@
   --toggle-thumb: #B8860B;
 }
 
-.usersListTitle {
-  color: var(--text-primary);
-  font-family: "Space Grotesk", serif;
-  padding: 30px 0 40px 50px;
+.homeContainer {
+  display: grid;
   justify-self: center;
+  grid-template-columns: 1fr 1fr;
+  width: 80vw;
 }
 
-.usersList {
-  margin: 0 0 50px 0;
+.courseswrapper {
+  display: flex;
+  border-right: 1px solid var(--text-primary);
+  justify-content: center;
+}
+.courseswrapper h1 {
+  font-family: "Space Grotesk", serif;
+  font-size: 1.5rem;
   color: var(--text-primary);
-  font-family: "Space Grotesk", serif;
-  text-align: start;
-  border-collapse: collapse;
-  justify-self: center;
-}
-
-.usersTableHeader th {
-  color: var(--text-primary);
-  font-family: "Space Grotesk", serif;
-  text-align: start;
-  border: 1px solid var(--primary-variant);
-  border-collapse: collapse;
-  padding: 10px;
-}
-
-.usersTableBody td {
-  border: 1px solid var(--primary-variant);
-  border-collapse: collapse;
-  margin: 0px;
-  padding: 10px;
-}
-.usersTableBody td a {
-  font-family: "Space Grotesk", serif;
   text-decoration: none;
-  color: var(--primary-variant);
-  font-weight: bold;
 }
 
-nav {
-  justify-self: center;
-}/*# sourceMappingURL=users.css.map */
+.blogsWrapper {
+  display: flex;
+  justify-content: center;
+}
+.blogsWrapper h2 {
+  font-family: "Montserrat", serif;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+}/*# sourceMappingURL=home.css.map */

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap");
 :root {
   --background: #e0e1dd;
-  --surface: #ade8f4;
+  --surface: #b5d9e0;
   --text-primary: #0d1b2a;
   --text-secondary: #1b263b;
   --primary: #778da9;
@@ -48,7 +48,7 @@
 .contactFormWrapper {
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 40%;
   justify-self: center;
 }
 
@@ -59,4 +59,37 @@
 .contactForm label {
   font-family: "Space Grotesk", serif;
   color: var(--text-primary);
+  font-size: 1.2rem;
+  margin: 10px 0px;
+}
+.contactForm input {
+  font-family: "Montserrat", sans-serif;
+  color: var(--text-primary);
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  background: var(--surface);
+}
+.contactForm textarea {
+  font-family: "Montserrat", sans-serif;
+  color: var(--text-primary);
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  background: var(--surface);
+}
+.contactForm p {
+  font-family: "Montserrat", sans-serif;
+  color: var(--text-primary);
+}
+.contactForm button {
+  font-family: "Montserrat", sans-serif;
+  color: var(--text-primary);
+  border: solid 1px var(--primary);
+  padding: 10px;
+  border-radius: 5px;
+  background: var(--surface);
+  margin-top: 20px;
+  width: 200px;
+  cursor: pointer;
 }/*# sourceMappingURL=contact.css.map */

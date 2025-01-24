@@ -12,78 +12,79 @@ use function Laravel\Prompts\password;
 
 class UsersController extends Controller
 {
-   public function index()
-   {
-      $users = User::orderBy('lastname', 'asc')
-                  ->paginate();
+    public function index()
+    {
+        $users = User::orderBy('lastname', 'asc')
+                ->paginate();
 
-      
-      return view ('users.users', compact('users'));
-   }
 
-   public function create()
-   {
-      return view ('users.create');
-   }
+        return view ('users.users', compact('users'));
+    }
 
-   public function store(Request $request)
-   {
-      $user = new User();
 
-      $user->name=$request->name;
-      $user->lastname=$request->lastname;
-      $user->address=$request->address;
-      $user->phone=$request->phone;
-      $user->email=$request->email;
-      $user->dni=$request->dni;
-      $user->date_birth=$request->date_birth;
-      $user->username=$request->username;
-      $user->password=$request->password;
 
-      $user->save();
+    public function create()
+    {
+        return view ('users.create');
+    }
 
-      return redirect('/users');
-   }
+    public function store(Request $request)
+    {
+        $user = new User();
 
-   public function show($id)
-   {
-      $user = User::find($id);
+        $user->name=$request->name;
+        $user->lastname=$request->lastname;
+        $user->address=$request->address;
+        $user->phone=$request->phone;
+        $user->email=$request->email;
+        $user->dni=$request->dni;
+        $user->date_birth=$request->date_birth;
+        $user->username=$request->username;
+        $user->password=$request->password;
 
-      return view('users.user', compact('user'));
-   }
+        $user->save();
 
-   public function edit($id)
-   {
-      $user = User::find($id);
+        return redirect('/users');
+    }
 
-      return view('users.edit', compact('user'));
-   }
+    public function show($id)
+    {
+        $user = User::find($id);
 
-   public function update(Request $request, $id)
-   {
-      $user = User::find($id);
+        return view('users.user', compact('user'));
+    }
 
-      $user->name=$request->name;
-      $user->lastname=$request->lastname;
-      $user->address=$request->address;
-      $user->phone=$request->phone;
-      $user->email=$request->email;
-      $user->dni=$request->dni;
-      $user->date_birth=$request->date_birth;
-      $user->username=$request->username;
-      
+    public function edit($id)
+    {
+        $user = User::find($id);
 
-      $user->save();
+        return view('users.edit', compact('user'));
+    }
 
-      return redirect("/users/$id");
-   }
+    public function update(Request $request, $id)
+    {
+        $user = User::find($id);
 
-   public function destroy($id)
-   {
-      $user = User::find($id);
+        $user->name=$request->name;
+        $user->lastname=$request->lastname;
+        $user->address=$request->address;
+        $user->phone=$request->phone;
+        $user->email=$request->email;
+        $user->dni=$request->dni;
+        $user->date_birth=$request->date_birth;
+        $user->username=$request->username;
 
-      $user->delete();
+        $user->save();
 
-      return redirect('/users');
-   }
+        return redirect("/users/$id");
+    }
+
+    public function destroy($id)
+    {
+        $user = User::find($id);
+
+        $user->delete();
+
+        return redirect('/users');
+    }
 }

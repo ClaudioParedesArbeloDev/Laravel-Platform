@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Code & Lens - Login')
-    
+
 
 
 @section('content')
@@ -22,5 +22,5 @@
         <a href="{{route('login')}}" class="signup">Don't have an account? Sign up here!</a>
 
     </div>
-    
+
 @endsection

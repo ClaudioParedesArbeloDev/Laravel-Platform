@@ -14,7 +14,7 @@ class ContactMailable extends Mailable
 {
     use Queueable, SerializesModels;
 
-     public $data;
+    public $data;
 
     public function __construct($data)
     {

@@ -5,7 +5,7 @@
 
 
 @section('content')
-<link rel="stylesheet" href="{{ asset('sass/user/user.css') }}">
+<link rel="stylesheet" href="{{ asset('sass/users/user/user.css') }}">
 
     <div class="user">
 
@@ -45,12 +45,12 @@
         confirmButtonText: "Yes, delete it!"
         }).then((result) => {
         if (result.isConfirmed) {
-        Swal.fire({
-            title: "Deleted!",
-            text: "Your file has been deleted.",
-            icon: "success"
-    });
-  }
+            Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success"
+            });
+        }
 });
 </script>
 

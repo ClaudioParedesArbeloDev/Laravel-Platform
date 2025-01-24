@@ -9,6 +9,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\AboutUsController;
 use App\Http\Middleware\LocaleCookie;
 use App\Mail\ContactMailable;
 
@@ -26,15 +27,8 @@ Route::middleware(LocaleCookie::class)->group(function () {
     Route::get('/login', [LoginController::class, 'login'])
         ->name('login');
 
-
-   /*  Route::get('/contacts', function (){
-
-        Mail::to('claudioparedesarbelo@gmail.com')
-            ->send(new ContactMailable);
-
-            return "Email sent successfully";
-
-    }); */
+    Route::get('/aboutus', [AboutUsController::class, 'index'])
+        ->name('aboutus');
 
     Route::get('/contact', [ContactController::class, 'index'])
         ->name('contact.index');

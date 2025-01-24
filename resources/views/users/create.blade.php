@@ -5,7 +5,7 @@
 
 @section('content')
 
-    <link rel="stylesheet" href="{{asset('sass/create/create.css') }}">
+    <link rel="stylesheet" href="{{asset('sass/users/create/create.css') }}">
     <div>
     <h2 class="titleCreate">{{__('Register')}}</h2>
     <form action="{{route('users.index')}}" method="POST" class="formCreate">
@@ -46,6 +46,9 @@
 
         <input type="password" id="password" name="password" required>
 
+        <label for="repeat_password">{{__('Repeat Password')}}:</label>
+
+        <input type="password" id="repeat_password" name="repeat_password" required>
 
         <button type="submit">{{__('Register')}}</button>
     </form>

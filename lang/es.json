@@ -1,4 +1,13 @@
 {
+    "Repeat Password": "Repetir contraseña",
+    "My name is Claudio, and I am a passionate software developer, photographer, and filmmaker. I have over 24 years of experience as a teacher, dedicated to teaching and sharing knowledge in various creative and technological fields.": "Mi nombre es Claudio, y soy un desarrollador de software apasionado, fotógrafo y filmMaker. Tengo más de 24 años de experiencia como profesor, dedicado a enseñar y compartir conocimiento en diferentes campos creativos y tecnológicos.",
+    "As a FullStack developer, I am proficient in both FrontEnd and BackEnd development, working with technologies like HTML5, CSS3, JavaScript, SCSS, and frameworks such as ReactJS and Angular to create modern and engaging interfaces. On the BackEnd, I have experience with NodeJS, ExpressJS, PHP, Laravel, and Spring Boot. For mobile application development, I use technologies like Flutter and Kotlin, and I also manage SQL and NoSQL databases such as MySQL and MongoDB.":"Como desarrollador FullStack, domino tanto el FrontEnd como el BackEnd, trabajando con tecnologías como HTML5, CSS3, JavaScript, SCSS y frameworks como ReactJS y Angular para crear interfaces modernas y atractivas. En el BackEnd, tengo experiencia con NodeJS, ExpressJS, PHP, Laravel, y Spring Boot, tambien para el desarrollo de aplicaciones moviles utilizo tecnologías como Flutter y Kotlin, además de gestionar bases de datos SQL y NoSQL como MySQL y MongoDB.",
+    "In the visual field, as a photographer and filmmaker, I combine creativity and technique to capture and tell unique stories, reflecting my passion for solving complex challenges with innovative solutions.":"En el ámbito visual, como fotógrafo y filmmaker, combino creatividad y técnica para capturar y contar historias únicas, lo que refleja mi interés por resolver desafíos complejos con soluciones innovadoras.",
+    "My goal is clear: to share everything I have learned throughout my career and help others develop their skills in programming, photography, and video. I am here to guide you on this exciting journey of learning and creation!":"Mi objetivo es claro: compartir todo lo que he aprendido a lo largo de mi carrera y ayudar a otros a desarrollar sus habilidades en programación, fotografía y video. ¡Estoy aquí para guiarte en este emocionante viaje de aprendizaje y creación!",
+    "About Me": "Sobre mi",
+    "Send": "Enviar",
+    "Message send successfully": "Mensaje enviado con éxito",
+    "Thank you for your message": "Gracias por su mensaje",
     "Email sent successfully": "Correo electrónico enviado con éxito",
     "Subject": "Asunto",
     "Do you want to contact us?": "¿Quieres contactarnos?",

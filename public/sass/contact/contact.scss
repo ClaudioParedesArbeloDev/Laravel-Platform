@@ -12,7 +12,7 @@
 .contactFormWrapper{
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 40%;
     justify-self: center;
 }
 
@@ -22,5 +22,40 @@
     label{
         font-family: "Space Grotesk", serif;
         color: var(--text-primary);
+        font-size: 1.2rem;
+        margin: 10px 0px;
+    }
+    input{
+        font-family: "Montserrat", sans-serif;
+        color: var(--text-primary);
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        background: var(--surface);
+    }
+    textarea{
+        font-family: "Montserrat", sans-serif;
+        color: var(--text-primary);
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        background: var(--surface);
+    }
+
+    p{
+        font-family: "Montserrat", sans-serif;
+        color: var(--text-primary);
+    }
+
+    button{
+        font-family: "Montserrat", sans-serif;
+        color: var(--text-primary);
+        border: solid 1px var(--primary);
+        padding: 10px;
+        border-radius: 5px;
+        background: var(--surface);
+        margin-top: 20px;
+        width: 200px;
+        cursor: pointer;
     }
 }
