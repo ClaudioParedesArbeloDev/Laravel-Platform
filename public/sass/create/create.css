@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap");
+:root {
+  --background: #e0e1dd;
+  --surface: #ade8f4;
+  --text-primary: #0d1b2a;
+  --text-secondary: #1b263b;
+  --primary: #778da9;
+  --primary-variant: #415a77;
+  --secondary: #00b4d8;
+  --secondary-variant: #0096c7;
+  --success: #85BB65;
+  --warning: #FFAA00;
+  --error: #B22222;
+  --card-background: #F5F1ED;
+  --border: #DED6D1;
+  --icon-color: #B28C2F;
+  --toggle-bg: #dbd2b5;
+  --toggle-thumb: #D4AF37;
+}
+
+[data-theme=dark] {
+  --background: #0d1b2a;
+  --surface: #1b263b;
+  --text-primary: #e0e1dd;
+  --text-secondary: #BDBDBD;
+  --primary: #415a77;
+  --primary-variant: #778da9;
+  --secondary: #808080;
+  --secondary-variant: #696969;
+  --success: #32CD32;
+  --warning: #FF8C00;
+  --error: #DC143C;
+  --card-background: #222222;
+  --border: #444444;
+  --icon-color: #210d69;
+  --toggle-bg: #333333;
+  --toggle-thumb: #B8860B;
+}
+
+.titleCreate {
+  font-family: "Space Grotesk", serif;
+  font-size: 2rem;
+  color: var(--text-primary);
+  text-align: center;
+  height: 80px;
+  margin: 30px;
+}
+
+.formCreate {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 150px 330px 150px 330px;
+  justify-content: center;
+  align-items: center;
+}
+.formCreate label {
+  font-family: "Space Grotesk", serif;
+  font-size: 1.3rem;
+  color: var(--text-primary);
+}
+.formCreate input {
+  font-family: "Space Grotesk", serif;
+  background: var(--primary-variant);
+  color: var(--background);
+  border: none;
+  border-radius: 10px;
+  height: 30px;
+  width: 300px;
+  margin: 20px 5px 20px 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px;
+}
+.formCreate button {
+  font-family: "Space Grotesk", serif;
+  font-size: 1.2rem;
+  background: var(--primary-variant);
+  color: var(--background);
+  border: none;
+  border-radius: 10px;
+  height: 40px;
+  width: 300px;
+  margin: 20px 5px 20px 5px;
+  grid-column: span 4;
+  justify-self: center;
+  cursor: pointer;
+}
+
+.btnCancel {
+  font-family: "Space Grotesk", serif;
+  font-size: 1rem;
+  background: var(--error);
+  color: var(--background);
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  justify-self: center;
+  text-decoration: none;
+}/*# sourceMappingURL=create.css.map */

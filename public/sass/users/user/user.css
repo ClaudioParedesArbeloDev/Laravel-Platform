@@ -47,7 +47,8 @@
   padding: 0 240px;
 }
 .user h2 {
-  grid-column: span 4;
+  grid-column: 1/5;
+  grid-row: 1;
   font-size: 1.3rem;
   justify-self: center;
 }
@@ -92,4 +93,9 @@ button.deleteUser {
   height: 50px;
   font-weight: 500;
   cursor: pointer;
+}
+
+.btnBack {
+  grid-column: 1;
+  grid-row: 1;
 }/*# sourceMappingURL=user.css.map */

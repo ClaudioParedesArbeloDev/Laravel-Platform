@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Courses;
+use App\Models\Instructors;
 
 class CoursesController extends Controller
 {
@@ -11,12 +12,13 @@ class CoursesController extends Controller
     {
         $courses = Courses::orderBy('category', 'asc')
             ->paginate(10);
-        return view('courses.index', compact('courses'));
+        return view('courses.courses', compact('courses'));
     }
 
     public function create()
     {
-        return view('courses.create');
+        $instructors = Instructors::all();
+        return view('courses.create', compact('instructors'));
     }
 
     public function store(Request $request)

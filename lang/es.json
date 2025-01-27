@@ -1,4 +1,13 @@
-{
+{   
+    "Courses": "Cursos",
+    "Instructors": "Instructores",
+    "Surname": "Apellido",
+    "Days": "Días",
+    "Schedule": "Horario",
+    "Duration": "Duración",
+    "Price": "Precio",
+    "Description": "Descripción",
+    "Create Course": "Crear curso",
     "Repeat Password": "Repetir contraseña",
     "My name is Claudio, and I am a passionate software developer, photographer, and filmmaker. I have over 24 years of experience as a teacher, dedicated to teaching and sharing knowledge in various creative and technological fields.": "Mi nombre es Claudio, y soy un desarrollador de software apasionado, fotógrafo y filmMaker. Tengo más de 24 años de experiencia como profesor, dedicado a enseñar y compartir conocimiento en diferentes campos creativos y tecnológicos.",
     "As a FullStack developer, I am proficient in both FrontEnd and BackEnd development, working with technologies like HTML5, CSS3, JavaScript, SCSS, and frameworks such as ReactJS and Angular to create modern and engaging interfaces. On the BackEnd, I have experience with NodeJS, ExpressJS, PHP, Laravel, and Spring Boot. For mobile application development, I use technologies like Flutter and Kotlin, and I also manage SQL and NoSQL databases such as MySQL and MongoDB.":"Como desarrollador FullStack, domino tanto el FrontEnd como el BackEnd, trabajando con tecnologías como HTML5, CSS3, JavaScript, SCSS y frameworks como ReactJS y Angular para crear interfaces modernas y atractivas. En el BackEnd, tengo experiencia con NodeJS, ExpressJS, PHP, Laravel, y Spring Boot, tambien para el desarrollo de aplicaciones moviles utilizo tecnologías como Flutter y Kotlin, además de gestionar bases de datos SQL y NoSQL como MySQL y MongoDB.",

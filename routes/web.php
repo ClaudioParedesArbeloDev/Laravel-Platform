@@ -10,6 +10,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\CoursesController;
+use App\Http\Controllers\InstructorController;
 use App\Http\Middleware\LocaleCookie;
 use App\Mail\ContactMailable;
 
@@ -40,5 +42,8 @@ Route::middleware(LocaleCookie::class)->group(function () {
 
     Route::resource('blogs', BlogController::class);
 
+    Route::resource('courses', CoursesController::class);
+
+    Route::resource('instructors', InstructorController::class);
 
 });

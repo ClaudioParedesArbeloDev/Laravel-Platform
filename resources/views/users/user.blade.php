@@ -9,6 +9,8 @@
 
     <div class="user">
 
+        <a class='btnBack' href="/users/">{{__('Back')}}</a>
+
         <h2>{{__('User')}}: {{$user->lastname}}, {{$user->name}}</h2>
 
         <dt>{{__('Name')}}</dt> <p>{{$user->name}}</p>
