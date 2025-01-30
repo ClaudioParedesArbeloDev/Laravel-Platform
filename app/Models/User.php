@@ -7,15 +7,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use App\Models\Role;
+use App\Models\Avatar;
+use App\Models\Courses;
 
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
-
-    const ROLE_ADMIN = 'admin';
-    const ROLE_INSTRUCTOR = 'instructor';
-    const ROLE_STUDENT = 'student';
     /**
      * The attributes that are mass assignable.
      *
@@ -30,9 +29,7 @@ class User extends Authenticatable
         'dni',
         'date_birth',
         'username',
-        'avatar',
         'password',
-        'role',
     ];
 
     /**
@@ -58,15 +55,6 @@ class User extends Authenticatable
         ];
     }
 
-    public function courses()
-    {
-        return $this->belongsToMany(Course::class);
-    }
-
-    public function scopeByRole($query, $role)
-    {
-        return $query->where('role', $role);
-    }
 
     // Mutators and Accessors
     protected function name(): Attribute
@@ -98,5 +86,18 @@ class User extends Authenticatable
         return Attribute::make(
             set: fn($value) => strtolower($value),
         );
+    }
+
+    public function roles(){
+        return $this->belongsToMany(Role::class);
+    }
+
+    public function avatar(){
+        
+        return $this->hasOne(Avatar::class);
+    }
+
+    public function courses(){
+        return $this->hasMany(Courses::class);
     }
 }

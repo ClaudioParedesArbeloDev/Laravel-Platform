@@ -3,15 +3,14 @@
 
 
 .homeContainer{
-    display: grid;
-    justify-self: center;
-    grid-template-columns: 1fr 1fr;
-    width: 80vw;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    
 }
 
 .courseswrapper{
     display: flex;
-    border-right: 1px solid var(--text-primary);
     justify-content: center;
     h1{
         font-family: "Space Grotesk", serif;
@@ -21,13 +20,3 @@
     }
 }
 
-.blogsWrapper{
-    display: flex;
-    justify-content: center;
-    h2{
-        font-family: "Montserrat", serif;
-        font-size: 1.5rem;
-        color: var(--text-primary);
-        text-decoration: none;
-    }
-}

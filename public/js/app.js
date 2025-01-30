@@ -20,4 +20,3 @@ document.documentElement.setAttribute("data-theme", savedTheme);
 if (savedTheme === "dark") {
     themeSwitch.checked = true;
 }
-

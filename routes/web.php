@@ -1,6 +1,6 @@
 <?php
 
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Mail;
 
@@ -27,7 +27,17 @@ Route::middleware(LocaleCookie::class)->group(function () {
         ->name('home');
 
     Route::get('/login', [LoginController::class, 'login'])
-        ->name('login');
+        ->name('login')->middleware('guest');
+    
+    Route::post('login', [LoginController::class, 'store'])
+        ->name('login.store');
+    
+    Route::get('/register', [LoginController::class, 'register'])
+        ->name('register')->middleware('guest');
+    
+    Route::get('/check-username', [UsersController::class, 'checkUsername'])
+        ->name('check-username');
+    
 
     Route::get('/aboutus', [AboutUsController::class, 'index'])
         ->name('aboutus');
@@ -44,6 +54,8 @@ Route::middleware(LocaleCookie::class)->group(function () {
 
     Route::resource('courses', CoursesController::class);
 
-    Route::resource('instructors', InstructorController::class);
-
+    Route::view('dashboard','dashboard.dashboard')->middleware('auth');
+    
 });
+
+

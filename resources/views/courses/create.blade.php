@@ -48,10 +48,10 @@
 
     <label class="formLabel" for="instructor">{{__('Instructor')}}:</label>
 
-    <select class="formInput" id="instructor_id" name="instructor_id" required>
+    <select class="formInput" id="user_id" name="user_id" required>
     <option value="">{{__('Select an instructor')}}</option>
-    @foreach($instructors as $instructor)
-        <option value="{{ $instructor->id }}">{{ $instructor->name }}</option>
+    @foreach($users as $user)
+        <option value="{{ $user->id }}">{{ $user->name }}</option>
     @endforeach
     </select>
         

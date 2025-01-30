@@ -43,47 +43,41 @@
   color: var(--text-primary);
   text-align: center;
   height: 80px;
-  margin: 30px;
+  margin: 20px;
 }
 
 .formCreate {
   display: grid;
   gap: 10px;
-  grid-template-columns: 150px 330px 150px 330px;
+  grid-template-columns: 1fr 1fr;
+  justify-self: center;
+  align-items: center;
+  width: 60%;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.formCreate label {
+.input-group label {
   font-family: "Space Grotesk", serif;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: var(--text-primary);
 }
-.formCreate input {
+.input-group input {
   font-family: "Space Grotesk", serif;
   background: var(--primary-variant);
   color: var(--background);
   border: none;
   border-radius: 10px;
   height: 30px;
-  width: 300px;
+  width: 400px;
   margin: 20px 5px 20px 5px;
   font-size: 1rem;
   font-weight: bold;
   padding: 10px;
-}
-.formCreate button {
-  font-family: "Space Grotesk", serif;
-  font-size: 1.2rem;
-  background: var(--primary-variant);
-  color: var(--background);
-  border: none;
-  border-radius: 10px;
-  height: 40px;
-  width: 300px;
-  margin: 20px 5px 20px 5px;
-  grid-column: span 4;
-  justify-self: center;
-  cursor: pointer;
 }
 
 .btnCancel {
@@ -96,4 +90,36 @@
   padding: 10px;
   justify-self: center;
   text-decoration: none;
+}
+
+.btn-register {
+  font-family: "Space Grotesk", serif;
+  font-size: 1.2rem;
+  background: var(--primary-variant);
+  color: var(--background);
+  border: none;
+  border-radius: 10px;
+  height: 40px;
+  width: 300px;
+  margin: 20px 5px 20px 5px;
+  justify-self: center;
+  cursor: pointer;
+  grid-column: span 2;
+}
+
+.error-message {
+  font-family: "Space Grotesk", sans-serif;
+  color: var(--error);
+  font-size: 1em;
+  margin-top: 5px;
+  display: block;
+}
+
+input:invalid {
+  border: 1px solid var(--error);
+}
+
+#response {
+  font-family: "Space Grotesk", sans-serif;
+  color: var(--error);
 }/*# sourceMappingURL=create.css.map */

@@ -64,11 +64,11 @@
                 <a href="/locale/en"><img src="{{asset('images/england.jpg')}}" alt="England Flag"></a>
                 <a href="/locale/es"><img src="{{asset('images/spain.jpg')}}" alt="Spain Flag"></a>
             </div>
-
+        @guest
             <a href="{{ route('login') }}" class="login"><i class="fa-solid fa-user">
                     <p>{{ __('Log in') }}</p>
                 </i></a>
-
+        @endguest
 
         </div>
 

@@ -4,21 +4,22 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Courses;
-use App\Models\Instructors;
+use App\Models\User;
 
 class CoursesController extends Controller
 {
     public function index()
     {
-        $courses = Courses::orderBy('category', 'asc')
+        $courses = Courses::with('user')
+            ->orderBy('category', 'asc')
             ->paginate(10);
         return view('courses.courses', compact('courses'));
     }
 
     public function create()
     {
-        $instructors = Instructors::all();
-        return view('courses.create', compact('instructors'));
+        $users = User::all();
+        return view('courses.create', compact('users'));
     }
 
     public function store(Request $request)
@@ -34,7 +35,7 @@ class CoursesController extends Controller
         $curse->duration = $request->duration;
         $curse->category = $request->category;
         $curse->capacity = $request->capacity;
-        $curse->instructor_id = $request->instructor_id;
+        $curse->user_id = $request->user_id;
         $curse->active = $request->active;
 
         $curse->save();
@@ -62,7 +63,7 @@ class CoursesController extends Controller
         $course->duration = $request->duration;
         $course->category = $request->category;
         $course->capacity = $request->capacity;
-        $course->instructor_id = $request->instructor_id;
+        $course->user_id = $request->user_id;
         $course->active = $request->active;
 
         $course->save();

@@ -25,7 +25,7 @@
                 <td>{{ $course->name }}</td>
                 <td>{{ $course->category }}</td>
                 <td>{{ $course->active }}</td>
-                <td>{{ $course->instructor->name }}</td>
+                <td>{{ $course->user ? $course->user->name : 'Desconocido' }}</td>
                 <td><a href="/courses/{{$course->id}}">{{__('Edit')}}</a></td>
             </tr>
             @endforeach

@@ -38,30 +38,17 @@
 }
 
 .homeContainer {
-  display: grid;
-  justify-self: center;
-  grid-template-columns: 1fr 1fr;
-  width: 80vw;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
 }
 
 .courseswrapper {
   display: flex;
-  border-right: 1px solid var(--text-primary);
   justify-content: center;
 }
 .courseswrapper h1 {
   font-family: "Space Grotesk", serif;
-  font-size: 1.5rem;
-  color: var(--text-primary);
-  text-decoration: none;
-}
-
-.blogsWrapper {
-  display: flex;
-  justify-content: center;
-}
-.blogsWrapper h2 {
-  font-family: "Montserrat", serif;
   font-size: 1.5rem;
   color: var(--text-primary);
   text-decoration: none;

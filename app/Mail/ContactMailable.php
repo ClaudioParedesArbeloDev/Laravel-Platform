@@ -52,9 +52,3 @@ class ContactMailable extends Mailable
         return [];
     }
 }
-
-
-
-
-
-

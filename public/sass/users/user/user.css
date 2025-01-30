@@ -39,7 +39,7 @@
 
 .user {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 2fr 1fr 1fr;
   justify-content: center;
   align-items: center;
   font-family: "Space Grotesk", serif;
@@ -51,6 +51,7 @@
   grid-row: 1;
   font-size: 1.3rem;
   justify-self: center;
+  padding: 20px 0;
 }
 .user dt {
   font-weight: bold;
@@ -58,6 +59,7 @@
   font-size: 1.2rem;
   padding-bottom: 5px;
   border-bottom: 1px solid var(--primary-variant);
+  grid-column: 2;
 }
 .user p {
   font-size: 1.2rem;
@@ -65,6 +67,7 @@
   padding-bottom: 5px;
   border-bottom: 1px solid var(--primary-variant);
   border-right: 1px solid var(--primary-variant);
+  grid-column: 3;
 }
 .user a {
   background: var(--success);
@@ -79,7 +82,7 @@
   padding: 10px;
 }
 .user form {
-  grid-column: 3/4;
+  grid-column: 3;
 }
 
 button.deleteUser {
@@ -98,4 +101,16 @@ button.deleteUser {
 .btnBack {
   grid-column: 1;
   grid-row: 1;
+}
+
+.btnEdit {
+  grid-column: 2;
+}
+
+.avatar {
+  width: 400px;
+  background: var(--primary-variant);
+  border-radius: 50%;
+  grid-column: 1;
+  grid-row: 2/11;
 }/*# sourceMappingURL=user.css.map */

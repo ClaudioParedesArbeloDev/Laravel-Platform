@@ -22,7 +22,6 @@ return new class extends Migration
             $table->string('dni');
             $table->date('date_birth');
             $table->string('username');
-            $table->string('avatar')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

@@ -2,56 +2,134 @@
 
 @section('title', 'Code & Lens - Register User')
 
-
 @section('content')
 
-    <link rel="stylesheet" href="{{asset('sass/users/create/create.css') }}">
+    <link rel="stylesheet" href="{{ asset('sass/users/create/create.css') }}">
+    
     <div>
-    <h2 class="titleCreate">{{__('Register')}}</h2>
-    <form action="{{route('users.index')}}" method="POST" class="formCreate">
-        @csrf
-        <label for="name">{{__('Name')}}:</label>
+        <h2 class="titleCreate">{{ __('Register') }}</h2>
 
-        <input type="text" id="name" name="name" >
+        <form action="{{ route('users.index') }}" method="POST" class="formCreate">
+            @csrf
 
-        <label for="lastname">{{__('Lastname')}}:</label>
+            
+            <div class="input-group">
+                <label for="name">{{ __('Name') }}:</label>
+                <input type="text" id="name" name="name" value="{{ old('name') }}" required>
+                @error('name')
+                    <span class="error-message">{{ $message }}</span>
+                @enderror
+            </div>
 
-        <input type="text"  id="lastname" name="lastname" >
+            
+            <div class="input-group">
+                <label for="lastname">{{ __('Lastname') }}:</label>
+                <input type="text" id="lastname" name="lastname" value="{{ old('lastname') }}" required>
+                @error('lastname')
+                    <span class="error-message">{{ $message }}</span>
+                @enderror
+            </div>
 
-        <label for="address">{{__('Address')}}:</label>
+            
+            <div class="input-group">
+                <label for="address">{{ __('Address') }}:</label>
+                <input type="text" id="address" name="address" value="{{ old('address') }}" required>
+                @error('address')
+                    <span class="error-message">{{ $message }}</span>
+                @enderror
+            </div>
 
-        <input type="text" id="address" name="address" >
+            
+            <div class="input-group">
+                <label for="phone">{{ __('Phone') }}:</label>
+                <input type="text" id="phone" name="phone" value="{{ old('phone') }}" required>
+                @error('phone')
+                    <span class="error-message">{{ $message }}</span>
+                @enderror
+            </div>
 
-        <label for="phone">{{__('Phone')}}:</label>
+            
+            <div class="input-group">
+                <label for="email">{{ __('Email') }}:</label>
+                <input type="text" id="email" name="email" value="{{ old('email') }}" required>
+                @error('email')
+                    <span class="error-message">{{ $message }}</span>
+                @enderror
+            </div>
 
-        <input type="text" id="phone" name="phone" >
+            
+            <div class="input-group">
+                <label for="dni">DNI:</label>
+                <input type="text" id="dni" name="dni" value="{{ old('dni') }}" required>
+                @error('dni')
+                    <span class="error-message">{{ $message }}</span>
+                @enderror
+            </div>
 
-        <label for="email">{{__('Email')}}:</label>
+            
+            <div class="input-group">
+                <label for="date_birth">{{ __('Date of Birth') }}:</label>
+                <input type="date" id="date_birth" name="date_birth" value="{{ old('date_birth') }}" required>
+                @error('date_birth')
+                    <span class="error-message">{{ $message }}</span>
+                @enderror
+            </div>
 
-        <input type="text" id="email" name="email" >
+           
+            <div class="input-group">
+                <label for="username">{{ __('Username') }}:</label>
+                <input type="text" id="username" name="username" value="{{ old('username') }}" required>
+                <span id='response'></span>
+                <span id="username-error" class="error-message"></span>
+                @error('username')
+                    <span class="error-message">{{ $message }}</span>
+                @enderror
+            </div>
 
-        <label for="dni">DNI:</label>
+            
+            <div class="input-group">
+                <label for="password">{{ __('Password') }}:</label>
+                <input type="password" id="password" name="password" required>
+                @error('password')
+                    <span class="error-message">{{ $message }}</span>
+                @enderror
+            </div>
 
-        <input type="text" id="dni" name="dni" >
 
-        <label for="date_birth">{{__('Date of Birth')}}:</label>
+            <div class="input-group">
+                <label for="password_confirmation">{{ __('Repeat Password') }}:</label>
+                <input type="password" id="password_confirmation" name="password_confirmation" required>
+                @error('password_confirmation')
+                    <span class="error-message">{{ $message }}</span>
+                @enderror
+            </div>
 
-        <input type="date" id="date_birth" name="date_birth" >
-
-        <label for="username">{{__('Username')}}:</label>
-
-        <input type="text" id="username" name="username" reqcd uired>
-
-        <label for="password">{{__('Password')}}:</label>
-
-        <input type="password" id="password" name="password" required>
-
-        <label for="repeat_password">{{__('Repeat Password')}}:</label>
-
-        <input type="password" id="repeat_password" name="repeat_password" required>
-
-        <button type="submit">{{__('Register')}}</button>
-    </form>
+            <button type="submit" class="btn-register">{{ __('Register') }}</button>
+        </form>
     </div>
 
+    <script>
+        @if ($errors->any())
+            Swal.fire({
+                icon: 'error',
+                title: '{{ __("Validation Error") }}',
+                html: `
+                    <ul style="text-align: left;">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                `
+            });
+        @endif
+
+        @if (session('success'))
+            Swal.fire({
+                icon: 'success',
+                title: '{{ __("Success") }}',
+                text: '{{ session("success") }}',
+            });
+        @endif
+    </script>
+    <script src="{{ asset('js/login.js') }}"></script>
 @endsection

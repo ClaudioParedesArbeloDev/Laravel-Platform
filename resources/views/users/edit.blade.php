@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
-@section('title', 'Code & Lens - Register User')
+@section('title', 'Code & Lens - Edit User')
 
 
 
 @section('content')
 
-    <link rel="stylesheet" href="{{asset('sass/users/create/create.css') }}">
+    <link rel="stylesheet" href="{{asset('sass/users/edit/edit.css') }}">
     <div>
     <h2 class="titleCreate">{{__('Edit User')}}</h2>
     <form action="/users/{{$user->id}}" method="POST" class="formCreate">
@@ -39,6 +39,16 @@
 
         <label for="username">{{__('Username')}}:</label>
             <input type="text" id="username" name="username" value="{{$user->username}}">
+        
+        <label for="role">{{ __('Role') }}:</label>
+        <select id="role" name="role">
+            @foreach($roles as $role)
+            <option value="{{ $role->id }}" 
+                {{ $user->roles->pluck('id')->contains($role->id) ? 'selected' : '' }}>
+                {{ $role->name }}
+            </option>
+            @endforeach
+        </select>
 
 
         <button type="submit">{{__('Update')}}</button>
