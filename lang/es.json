@@ -1,4 +1,8 @@
 {   
+    "logout": "salir",
+    "notifications": "notificaciones",
+    "more courses": "más cursos",
+    "my path": "mi ruta",
     "profile": "perfil",
     "Don't have an account? Sign up here!": "¿No tienes una cuenta? ¡Regístrate aquí!",
     "Validation Error": "Error de validación",

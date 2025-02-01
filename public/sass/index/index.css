@@ -196,7 +196,7 @@ body {
   align-items: center;
 }
 
-input[type=checkbox] {
+#switch {
   display: none;
 }
 

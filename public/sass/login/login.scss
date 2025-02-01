@@ -18,14 +18,6 @@
         padding: 10px 0;
         width: 400px;
     }
-    input{
-        padding: 10px;
-        border: none;
-        border-radius: 10px;
-        background: var(--toggle-bg);
-        width: 400px;
-        color: var(--text-primary);
-    }
     button{
         padding: 10px;
         background: var(--primary-variant);
@@ -42,5 +34,21 @@
     padding: 30px;
     font-family: "Space Grotesk", serif;
     text-decoration: none;
+    color: var(--text-primary);
+}
+
+.checkRemember{
+margin: 20px 0 0 0;
+   
+}
+
+
+
+.inputLogin{
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: var(--toggle-bg);
+    width: 400px;
     color: var(--text-primary);
 }

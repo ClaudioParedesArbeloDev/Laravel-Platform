@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Mail;
 
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BlogController;
@@ -12,6 +13,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\InstructorController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\LocaleCookie;
 use App\Mail\ContactMailable;
 
@@ -31,6 +33,9 @@ Route::middleware(LocaleCookie::class)->group(function () {
     
     Route::post('login', [LoginController::class, 'store'])
         ->name('login.store');
+
+    Route::post('/logout', [LoginController::class, 'logout'])
+        ->name('logout');
     
     Route::get('/register', [LoginController::class, 'register'])
         ->name('register')->middleware('guest');
@@ -48,6 +53,9 @@ Route::middleware(LocaleCookie::class)->group(function () {
     Route::post('/contact', [ContactController::class, 'store'])
         ->name('contact.store');
 
+    Route::get('/dashboard/admin', [AdminController::class, 'index'])
+        ->name('admin')->middleware('auth');
+
     Route::resource('users', UsersController::class);
 
     Route::resource('blogs', BlogController::class);
@@ -55,6 +63,13 @@ Route::middleware(LocaleCookie::class)->group(function () {
     Route::resource('courses', CoursesController::class);
 
     Route::view('dashboard','dashboard.dashboard')->middleware('auth');
+
+
+    Route::get('/dashboard/perfil', [ProfileController::class, 'edit'])
+        ->name('profile.edit')->middleware('auth');
+    
+    Route::put('/dashboard/update', [ProfileController::class, 'update'])
+        ->name('profile.update')->middleware('auth');
     
 });
 

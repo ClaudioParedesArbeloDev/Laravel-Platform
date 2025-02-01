@@ -14,9 +14,13 @@
             @csrf
             <div class="loginForm">
                 <label for="email">{{__('Email')}}:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" required class="inputLogin">
                 <label for="password">{{__('Password')}}:</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" required class="inputLogin">
+                <div class='checkRemember'>
+                <input type="checkbox" id="remember" name="remember" class="rememberMe">
+                <label for="remember">{{__('Remember me')}}</label>
+                </div>
                 <button type="submit">Login</button>
             </div>
         </form>

@@ -16,7 +16,9 @@ class LoginController extends Controller
     {
         $credentials = request()->only('email', 'password');
 
-        if(Auth::attempt($credentials)){
+        $remember = request()->filled('remember');
+
+        if(Auth::attempt($credentials, $remember)) {
             request()->session()->regenerate();
             return redirect('dashboard');
         };
@@ -26,5 +28,11 @@ class LoginController extends Controller
     public function register()
     {
         return view ('users.create');
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/');
     }
 }

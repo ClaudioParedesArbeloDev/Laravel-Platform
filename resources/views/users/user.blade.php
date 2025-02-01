@@ -12,9 +12,11 @@
         <a class='btnBack' href="/users/">{{__('Back')}}</a>
 
         <h2>{{__('User')}}: {{$user->lastname}}, {{$user->name}}</h2>
-
+        @if ($user->avatar && $user->avatar->avatar)
+            <img src="{{ asset('storage/' . $user->avatar->avatar) }}" alt="avatar" class="avatar">
+        @else
         <img src="{{asset('images/avatars/avatar.png')}}" alt="avatar" class="avatar">
-
+        @endif
         <dt>{{__('Name')}}</dt> <p>{{$user->name}}</p>
         <dt>{{__('Lastname')}}</dt> <p>{{$user->lastname}}</p>
         <dt>{{__('Address')}}</dt> <p>{{$user->address}}</p>

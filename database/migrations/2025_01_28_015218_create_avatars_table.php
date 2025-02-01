@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('avatar');
             $table->foreignId('user_id')
-                ->constrained('users')
+                ->constrained('')
                 ->onDelete('cascade');  
             $table->timestamps();
         });

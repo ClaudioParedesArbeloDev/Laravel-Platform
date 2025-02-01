@@ -4,6 +4,9 @@
 body{
     margin: 0;
     padding: 0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    height: 100vh;
 }
 
 
@@ -13,6 +16,13 @@ body{
     height: 100vh;
     display: flex;
     flex-direction: column;
+    border-right: 1px solid var(--border);
+}
+
+.titleDashboard{
+    color: var(--text-primary);
+    font-family: 'Space Grotesk', sans-serif;
+    text-align: center;
 }
 
 .user{
@@ -42,8 +52,8 @@ body{
 }
 .theme-toggle {
     position: fixed;
-    top: 20px;
-    right: 20px;
+    bottom: 20px;
+    left: 100px;
     display: flex;
     align-items: center;
 }
@@ -117,3 +127,52 @@ input[type="checkbox"]:checked + .toggle .moon {
     opacity: 1;
 }
 
+.navDashboard{
+    margin: 20px 0;
+    a{
+        display: flex;
+        text-decoration: none;
+        align-items: center;
+        padding: 20px 0 20px 20px;
+        i{
+            text-decoration: none;
+            color: var(--text-primary);
+            padding: 0 10px;
+        }
+        li{
+            color: var(--text-primary);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            list-style: none;
+            letter-spacing: 2px;
+        }
+    }
+    a:hover{
+        background: var(--secondary);
+        
+    }
+}
+
+.logout{
+    margin: 20px 0;
+    a{
+        display: flex;
+        text-decoration: none;
+        color: var(--text-primary);
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 1.1rem;
+        list-style: none;
+        letter-spacing: 2px;
+        align-items: center;
+        padding: 20px 0 20px 20px;
+        i{
+            text-decoration: none;
+            color: var(--text-primary);
+            padding: 0 10px;
+        }
+    }
+    a:hover{
+        background: var(--secondary);
+        
+    }
+}
