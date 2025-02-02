@@ -1,9 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.dashLayouts')
 
-@section('title', 'Code & Lens - Edit User')
-
-
-
+@section('title', 'Code & Lens - User Edit')
+    
 @section('content')
 
     <link rel="stylesheet" href="{{asset('sass/users/edit/edit.css') }}">

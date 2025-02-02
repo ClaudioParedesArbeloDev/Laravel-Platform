@@ -28,6 +28,7 @@ Route::middleware(LocaleCookie::class)->group(function () {
     Route::get('/', [HomeController::class, 'index'])
         ->name('home');
 
+    //Route of logins
     Route::get('/login', [LoginController::class, 'login'])
         ->name('login')->middleware('guest');
     
@@ -37,12 +38,12 @@ Route::middleware(LocaleCookie::class)->group(function () {
     Route::post('/logout', [LoginController::class, 'logout'])
         ->name('logout');
     
+
     Route::get('/register', [LoginController::class, 'register'])
         ->name('register')->middleware('guest');
     
     Route::get('/check-username', [UsersController::class, 'checkUsername'])
         ->name('check-username');
-    
 
     Route::get('/aboutus', [AboutUsController::class, 'index'])
         ->name('aboutus');
@@ -56,11 +57,52 @@ Route::middleware(LocaleCookie::class)->group(function () {
     Route::get('/dashboard/admin', [AdminController::class, 'index'])
         ->name('admin')->middleware('auth');
 
-    Route::resource('users', UsersController::class);
+    //Route of users
+    Route::get('/users', [UsersController::class, 'index'])
+        ->name('users.index')->middleware('auth');
+    
+    Route::get('/users/create', [UsersController::class, 'create'])
+        ->name('users.create');
+    
+    Route::post('/users', [UsersController::class, 'store'])
+        ->name('users.store');
+    
+    Route::get('/users/{id}', [UsersController::class, 'show'])
+        ->name('users.show')->middleware('auth');
+    
+    Route::get('/users/{id}/edit', [UsersController::class, 'edit'])
+        ->name('users.edit')->middleware('auth');
 
-    Route::resource('blogs', BlogController::class);
+    Route::put('/users/{id}', [UsersController::class, 'update'])
+        ->name('users.update')->middleware('auth');
 
-    Route::resource('courses', CoursesController::class);
+    Route::delete('/users/{id}', [UsersController::class, 'destroy'])
+        ->name('users.destroy')->middleware('auth');
+
+    //Route of blogs
+    Route::get('/blogs', [BlogController::class, 'index'])
+        ->name('blogs.index');
+    
+    Route::get('/blogs/create', [BlogController::class, 'create'])
+        ->name('blogs.create')->middleware('auth');
+    
+    Route::post('/blogs', [BlogController::class, 'store'])
+        ->name('blogs.store')->middleware('auth');
+    
+    Route::get('/blogs/{id}', [BlogController::class, 'show'])
+        ->name('blogs.show');
+    
+    Route::get('/blogs/{id}/edit', [BlogController::class, 'edit'])
+        ->name('blogs.edit')->middleware('auth');
+
+    Route::put('/blogs/{id}', [BlogController::class, 'update'])
+        ->name('blogs.update')->middleware('auth');
+
+    Route::delete('/blogs/{id}', [BlogController::class, 'destroy'])
+        ->name('blogs.destroy')->middleware('auth');
+    
+
+    Route::resource('courses', CoursesController::class)->middleware('auth');;
 
     Route::view('dashboard','dashboard.dashboard')->middleware('auth');
 

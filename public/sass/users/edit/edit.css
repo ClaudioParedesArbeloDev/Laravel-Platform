@@ -37,13 +37,16 @@
   --toggle-thumb: #B8860B;
 }
 
+body {
+  background: var(--card-background);
+}
+
 .titleCreate {
   font-family: "Space Grotesk", serif;
   font-size: 2rem;
   color: var(--text-primary);
   text-align: center;
-  height: 80px;
-  margin: 20px;
+  margin: 80px 0 70px 0;
 }
 
 .formCreate {

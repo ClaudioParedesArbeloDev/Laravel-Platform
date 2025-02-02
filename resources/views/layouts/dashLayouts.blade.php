@@ -41,9 +41,9 @@
         <h2 class="titleDashboard">Code & Lens</h2>
         <div class="user">
                 @if (Auth::user()->avatar == null)
-                    <img src="{{asset('images/avatars/avatar.png')}}" alt="avatar">
+                    <img src="{{asset('images/avatars/avatar.png')}}" alt="avatar" class="avatarSidebar">
                 @else
-                    <img src="{{asset('storage/'.Auth::user()->avatar->avatar)}}" alt="avatar">                    
+                    <img src="{{asset('storage/'.Auth::user()->avatar->avatar)}}" alt="avatar" class="avatarSidebar">                    
                 @endif
                 <pre>{{Auth::user()->name}}</pre>
                 <pre>{{Auth::user()->lastname}}</pre>

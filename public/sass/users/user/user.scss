@@ -1,85 +1,96 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap');
 @import '../../colors.scss';
 
-
-.user{
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    justify-content: center;
-    align-items: center;
-    font-family: "Space Grotesk", serif;
-    color: var(--text-primary);
-    padding: 0 240px;
-    
-    
-    h2{
-        grid-column: 1 / 5;
-        grid-row: 1;
-        font-size: 1.3rem;
-        justify-self: center;
-        padding: 20px 0;
-    }
-    dt{
-        font-weight: bold;
-        color: var(--primary-variant);
-        font-size: 1.2rem;
-        padding-bottom: 5px;
-        border-bottom: 1px solid var(--primary-variant);
-        grid-column: 2;
-    }
-    p{
-        font-size: 1.2rem;
-        margin-right: 10px;
-        padding-bottom: 5px;
-        border-bottom: 1px solid var(--primary-variant);
-        border-right: 1px solid var(--primary-variant);
-        grid-column: 3;
-    }
-
-    a{
-        background: var(--success);
-        border: none;
-        border-radius: 10px;
-        color: var(--background);
-        width: 100px;
-        text-decoration: none;
-        font-family: "Space Grotesk", serif;
-        font-weight: 500;
-        text-align: center;
-        padding: 10px;
-    }
-    form{
-        grid-column: 3;
-    }
+body{
+    background: var(--card-background);
 }
 
-button.deleteUser{
-    background: var(--error);
-    color: var(--background);
-    font-family: "Space Grotesk", serif;
-    border: none;
-    border-radius: 10px;
-    padding: 10px;
-    width: 100px;
-    height: 50px;
-    font-weight: 500;
-    cursor:pointer;
-    
+.userView{   
+    display: flex;
+    font-family: 'Space Grotesk', serif;
+    color: var(--text-primary);
+    margin: 30px 0;
+    flex-direction: column;
+    align-items: center;
+    h2{
+        margin: 40px 0;
+    }
 }
 
 .btnBack{
     grid-column: 1;
-    grid-row: 1;
+    border: 1px solid var(--text-primary);
+    border-radius: 5px;
+    color: var(--text-primary);
+    padding: 10px;
+    position: absolute;
+    top: 60px;
+    right: 200px;
+    font-family: "Space Grotesk", serif;
+    width: 50px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.userWrapper{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    align-items: center;
+    dt{
+        grid-column: 2;
+        font-size: 1.2rem;
+    }
+    p{
+        grid-column: 3;
+        font-size: 1.2rem;
+    }
+}
+
+.avatarUser{
+    grid-column: 1;
+    width: 300px;
+    background: var(--secondary);
+    border-radius: 50%;
+    grid-row: span 9;
 }
 
 .btnEdit{
     grid-column: 2;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    width: 150px;
+    height: 50px;
+    color: var(--text-primary);
+    background: var(--warning);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.avatar{
-    width: 400px;
-    background: var(--primary-variant);
-    border-radius: 50%;
-    grid-column: 1;
-    grid-row: 2 / 11;
+.btnEdit:hover{
+    background: var(--secondary);
+}
+
+
+
+.deleteUser{
+    grid-column: 3;
+    border: none;
+    border-radius: 5px;
+    width: 150px;
+    height: 50px;
+    color: var(--text-primary);
+    background: var(--error);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.deleteUser:hover{
+    transform: scale(1.3);
 }

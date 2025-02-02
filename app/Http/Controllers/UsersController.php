@@ -6,7 +6,6 @@ use App\Models\User;
 use App\Models\Role;
 
 use Illuminate\Support\Facades\Hash;
-
 use Illuminate\Http\Request;
 
 use function Laravel\Prompts\password;

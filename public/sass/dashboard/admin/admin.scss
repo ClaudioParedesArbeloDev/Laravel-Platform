@@ -1,2 +1,77 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap');
 @import '../../colors.scss';
+
+
+body{
+    background: var(--card-background);
+}
+
+.adminWrapper{
+    display: grid;
+    color: var(--text-primary);
+    font-family: "Space Grotesk", serif;
+    margin: 50px 40px;
+    grid-template-columns: repeat(4, auto);
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.adminTitle{
+    grid-column: 1 / 4;
+    justify-self: center;
+}
+
+
+.adminList{
+    color: var(--text-primary);
+    grid-column: 1;
+    font-family: "Space Grotesk", serif;
+    list-style: none;
+}
+
+.btnAdmin{
+    color: var(--text-primary);
+    text-decoration: none;
+    grid-column: 2;
+    width: 150px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid var(--text-primary);
+    border-radius: 5px;
+}
+
+.btnAdmin:hover{
+    background: var(--secondary);
+}
+
+.btnAdmin1{
+    grid-column: 3;
+    text-align: center;
+    color: var(--text-primary);
+    text-decoration: none;
+    width: 150px;
+    padding: 10px;
+    border: 1px solid var(--text-primary);
+    border-radius: 5px;
+}
+
+.btnAdmin1:hover{
+    background: var(--secondary);
+}
+
+.btnAdmin2{
+    grid-column: 4;
+    text-align: center;
+    color: var(--text-primary);
+    text-decoration: none;
+    width: 150px;
+    padding: 10px;
+    border: 1px solid var(--text-primary);
+    border-radius: 5px;
+}
+
+.btnAdmin2:hover{
+    background: var(--secondary);
+}
+

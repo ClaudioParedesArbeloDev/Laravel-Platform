@@ -1,42 +1,43 @@
-@extends('layouts.app')
+@extends('layouts.dashLayouts')
 
 @section('title', 'Code & Lens - User')
-
-
-
+    
 @section('content')
+
 <link rel="stylesheet" href="{{ asset('sass/users/user/user.css') }}">
 
-    <div class="user">
+    <div class="userView">
 
-        <a class='btnBack' href="/users/">{{__('Back')}}</a>
+        <a class='btnBack' href="/users/"><i class="fa-solid fa-arrow-rotate-left"></i></a>
 
         <h2>{{__('User')}}: {{$user->lastname}}, {{$user->name}}</h2>
-        @if ($user->avatar && $user->avatar->avatar)
-            <img src="{{ asset('storage/' . $user->avatar->avatar) }}" alt="avatar" class="avatar">
-        @else
-        <img src="{{asset('images/avatars/avatar.png')}}" alt="avatar" class="avatar">
-        @endif
-        <dt>{{__('Name')}}</dt> <p>{{$user->name}}</p>
-        <dt>{{__('Lastname')}}</dt> <p>{{$user->lastname}}</p>
-        <dt>{{__('Address')}}</dt> <p>{{$user->address}}</p>
-        <dt>{{__('Phone')}}</dt> <p>{{$user->phone}}</p>
-        <dt>{{__('Email')}}</dt> <p>{{$user->email}}</p>
-        <dt>DNI:</dt> <p>{{$user->dni}}</p>
-        <dt>{{__('Date of Birth')}}:</dt> <p>{{$user->date_birth}}</p>
-        <dt>{{__('Username')}}:</dt> <p>{{$user->username}}</p>
-        <dt>{{__('Rol')}}:</dt><p>@foreach($user->roles as $role)<span>{{$role->name}}</span>@if(!$loop->last), @endif @endforeach</p>
+        <div class="userWrapper">
+            @if ($user->avatar && $user->avatar->avatar)
+                <img src="{{ asset('storage/' . $user->avatar->avatar) }}" alt="avatar" class="avatarUser">
+            @else
+                <img src="{{asset('images/avatars/avatar.png')}}" alt="avatar" class="avatarUser">
+            @endif
+            <dt>{{__('Name')}}</dt> <p>{{$user->name}}</p>
+            <dt>{{__('Lastname')}}</dt> <p>{{$user->lastname}}</p>
+            <dt>{{__('Address')}}</dt> <p>{{$user->address}}</p>
+            <dt>{{__('Phone')}}</dt> <p>{{$user->phone}}</p>
+            <dt>{{__('Email')}}</dt> <p>{{$user->email}}</p>
+            <dt>DNI:</dt> <p>{{$user->dni}}</p>
+            <dt>{{__('Date of Birth')}}:</dt> <p>{{$user->date_birth}}</p>
+            <dt>{{__('Username')}}:</dt> <p>{{$user->username}}</p>
+            <dt>{{__('Rol')}}:</dt><p>@foreach($user->roles as $role)<span>{{$role->name}}</span>@if(!$loop->last), @endif @endforeach</p>
 
-        <a href="/users/{{$user->id}}/edit" class = 'btnEdit'>{{__('Edit User')}}</a>
+            <a href="/users/{{$user->id}}/edit" class = 'btnEdit'>{{__('Edit User')}}</a>
 
-        <form action="/users/{{$user->id}}" method="POST" id="deleteUserForm" >
+            <form action="/users/{{$user->id}}" method="POST" id="deleteUserForm" >
 
-            @csrf
+                @csrf
 
-            @method('DELETE')
+                @method('DELETE')
 
-            <button type="submit" class="deleteUser">{{__('Delete User')}}</button>
-        </form>
+                <button type="submit" class="deleteUser">{{__('Delete User')}}</button>
+            </form>
+        </div>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script>
             const deleteUserButton = document.querySelector('.deleteUser');

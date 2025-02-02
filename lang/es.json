@@ -1,4 +1,11 @@
-{   
+{
+    "view": "ver",
+    "classes": "clases",
+    "back": "atrás",
+    "Admin Page": "Página de administración",
+    "create": "crear",
+    "edit": "editar",
+    "users": "usuarios",
     "logout": "salir",
     "notifications": "notificaciones",
     "more courses": "más cursos",

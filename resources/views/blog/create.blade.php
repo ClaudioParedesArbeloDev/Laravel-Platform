@@ -1,14 +1,13 @@
-@extends('layouts.app')
+@extends('layouts.dashLayouts')
 
-@section('title', 'Code & Lens - Create Blog')
+@section('title', 'Code & Lens - Blog Create')
     
-
-
 @section('content')
 
 <link rel="stylesheet" href="{{asset('sass/blogs/create/create.css') }}">
 <div class="formWrapper">
 <h2 class="titleCreate">{{__('Create Blog')}}</h2>
+<a class="btnBack" href="{{route('admin')}}"><i class="fa-solid fa-arrow-rotate-left"></i></a>
 <form action="{{route('blogs.index')}}" method="POST" class="formCreate">
     @csrf
     <label class="formLabel" for="title">{{__('Title')}}:</label>

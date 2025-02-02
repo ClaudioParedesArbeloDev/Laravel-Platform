@@ -37,6 +37,10 @@
   --toggle-thumb: #B8860B;
 }
 
+body {
+  background: var(--card-background);
+}
+
 .formWrapper {
   display: flex;
   flex-direction: column;
@@ -86,4 +90,19 @@
   font-family: "Space Grotesk", serif;
   background-color: var(--text-primary);
   border-radius: 5px;
+}
+
+.btnBack {
+  grid-column: 1;
+  border: 1px solid var(--text-primary);
+  border-radius: 5px;
+  color: var(--text-primary);
+  padding: 10px;
+  position: absolute;
+  top: 60px;
+  right: 200px;
+  font-family: "Space Grotesk", serif;
+  width: 50px;
+  cursor: pointer;
+  text-align: center;
 }/*# sourceMappingURL=create.css.map */
