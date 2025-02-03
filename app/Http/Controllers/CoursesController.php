@@ -18,7 +18,10 @@ class CoursesController extends Controller
 
     public function create()
     {
-        $users = User::all();
+        $users = User::whereHas('roles', function ($query) {
+            $query->whereIn('name', ['admin', 'instructor']);
+        })->get();
+    
         return view('courses.create', compact('users'));
     }
 
@@ -42,18 +45,26 @@ class CoursesController extends Controller
         return redirect()->route('courses.index');
     }
 
-    public function show(Courses $course)
+    public function show($id)
     {
-        return view('courses.show', compact('course'));
+        $course = Courses::findOrFail($id);
+        return view('courses.course', compact('course', 'id'));
     }
 
-    public function edit(Courses $course)
+    public function edit($id)
     {
-        return view('courses.edit', compact('course'));
+        $course = Courses::findOrFail($id);
+        $users = User::whereHas('roles', function ($query) {
+            $query->whereIn('name', ['admin', 'instructor']);
+        })->get();
+
+        return view('courses.edit', compact('course', 'users', 'id'));
     }
 
-    public function update(Request $request, Courses $course)
+    public function update(Request $request, $id)
     {
+        $course = Courses::findOrFail($id);
+
         $course->name = $request->name;
         $course->description = $request->description;
         $course->image = $request->image;
@@ -68,14 +79,33 @@ class CoursesController extends Controller
 
         $course->save();
 
-        return redirect()->route('courses.index');
+        return redirect()->route('courses.show', $id);
     }
 
-    public function destroy(Courses $course)
+    public function destroy($id)
     {
+        $course = Courses::findOrFail($id);
         $course->delete();
 
         return redirect()->route('courses.index');
+    }
+
+    public function cursos()
+    {
+        $courses = Courses::with('user')
+            ->orderBy('category', 'asc')
+            ->paginate(10);
+        
+        $coursesByCategory = $courses->groupBy('category');
+
+        return view('cursos', compact('courses', 'coursesByCategory'));
+        
+    }
+
+    public function cursoDetail($id)
+    {
+        $course = Courses::findOrFail($id);
+        return view('courses.courseDetail', compact('course', 'id'));
     }
 
 }

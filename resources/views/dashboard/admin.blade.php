@@ -15,8 +15,8 @@
         
         
             <li class="adminList">{{__('courses')}}</li>
-            <a href="" class="btnAdmin">{{__('view')}}</a>
-            <a href="" class="btnAdmin1">{{__('create')}}</a>
+            <a href="{{route('courses.index')}}" class="btnAdmin">{{__('view')}}</a>
+            <a href="{{route('courses.create')}}" class="btnAdmin1">{{__('create')}}</a>
             
         
             <li class="adminList">{{__('classes')}}</li>

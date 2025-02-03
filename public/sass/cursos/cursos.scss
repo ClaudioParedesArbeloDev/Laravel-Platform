@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import '../colors.scss';
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'space grotesk', serif;
+}
+
+.coursesWrapper{
+    display: flex;
+    flex-wrap: wrap;
+    color: var(--text-primary);
+    align-items: center;
+    .cardwrapper{
+        grid-column: 2;
+        display: flex;
+    }
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 300px;
+    margin: 40px;
+    border: 2px solid var(--primary-variant);
+    border-radius: 10px;
+}
+
+.card-header{
+    border-bottom: 1px solid var(--primary-variant);
+    h4{
+        font-family: "Roboto Mono", serif;
+        font-weight: 300;
+        font-size: 0.8em;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        padding: 0 30px;
+    }
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    padding: 0 30px;
+    font-family: "Source Code Pro", serif;
+}
+
+.btnCourse{
+    background: var(--secondary);
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--text-primary);
+}

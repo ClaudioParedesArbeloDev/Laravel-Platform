@@ -42,6 +42,8 @@
             <h2>{{__('Popular Articles')}}</h2>
     
         </div>
+        {{ $blogs->links() }}
+    
     </div>
     
 

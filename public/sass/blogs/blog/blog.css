@@ -41,14 +41,15 @@
   font-family: "Space Grotesk", serif;
   width: 60%;
   justify-self: center;
+  margin-top: 50px;
 }
 
 .blogCategory {
   font-size: 0.6em;
   padding: 10px;
   color: var(--text-primary);
-  background: var(--secondary);
   border-radius: 10px;
+  text-transform: uppercase;
 }
 
 .blogTitle {
@@ -57,5 +58,14 @@
 }
 
 .blogImage {
-  width: 100%;
+  width: 40vw;
+  margin: 20px 0;
+}
+
+.blogCreatedAt {
+  text-transform: lowercase;
+}
+
+.blogBody {
+  text-align: justify;
 }/*# sourceMappingURL=blog.css.map */

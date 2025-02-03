@@ -28,36 +28,7 @@ Route::middleware(LocaleCookie::class)->group(function () {
     Route::get('/', [HomeController::class, 'index'])
         ->name('home');
 
-    //Route of logins
-    Route::get('/login', [LoginController::class, 'login'])
-        ->name('login')->middleware('guest');
-    
-    Route::post('login', [LoginController::class, 'store'])
-        ->name('login.store');
-
-    Route::post('/logout', [LoginController::class, 'logout'])
-        ->name('logout');
-    
-
-    Route::get('/register', [LoginController::class, 'register'])
-        ->name('register')->middleware('guest');
-    
-    Route::get('/check-username', [UsersController::class, 'checkUsername'])
-        ->name('check-username');
-
-    Route::get('/aboutus', [AboutUsController::class, 'index'])
-        ->name('aboutus');
-
-    Route::get('/contact', [ContactController::class, 'index'])
-        ->name('contact.index');
-
-    Route::post('/contact', [ContactController::class, 'store'])
-        ->name('contact.store');
-
-    Route::get('/dashboard/admin', [AdminController::class, 'index'])
-        ->name('admin')->middleware('auth');
-
-    //Route of users
+    //Routes of users
     Route::get('/users', [UsersController::class, 'index'])
         ->name('users.index')->middleware('auth');
     
@@ -79,7 +50,7 @@ Route::middleware(LocaleCookie::class)->group(function () {
     Route::delete('/users/{id}', [UsersController::class, 'destroy'])
         ->name('users.destroy')->middleware('auth');
 
-    //Route of blogs
+    //Routes of blogs
     Route::get('/blogs', [BlogController::class, 'index'])
         ->name('blogs.index');
     
@@ -89,7 +60,7 @@ Route::middleware(LocaleCookie::class)->group(function () {
     Route::post('/blogs', [BlogController::class, 'store'])
         ->name('blogs.store')->middleware('auth');
     
-    Route::get('/blogs/{id}', [BlogController::class, 'show'])
+    Route::get('/blogs/{blog}', [BlogController::class, 'show'])
         ->name('blogs.show');
     
     Route::get('/blogs/{id}/edit', [BlogController::class, 'edit'])
@@ -101,11 +72,66 @@ Route::middleware(LocaleCookie::class)->group(function () {
     Route::delete('/blogs/{id}', [BlogController::class, 'destroy'])
         ->name('blogs.destroy')->middleware('auth');
     
+    //Routes of courses
+    Route::get('/courses', [CoursesController::class, 'index'])
+        ->name('courses.index');
+    
+    Route::get('/courses/create', [CoursesController::class, 'create'])
+        ->name('courses.create')->middleware('auth');
+    
+    Route::post('/courses', [CoursesController::class, 'store'])
+        ->name('courses.store')->middleware('auth');
+    
+    Route::get('/courses/{id}', [CoursesController::class, 'show'])
+        ->name('courses.show');
+    
+    Route::get('/courses/{id}/edit', [CoursesController::class, 'edit'])
+        ->name('courses.edit')->middleware('auth');
 
-    Route::resource('courses', CoursesController::class)->middleware('auth');;
+    Route::put('/courses/{id}', [CoursesController::class, 'update'])
+        ->name('courses.update')->middleware('auth');
+
+    Route::delete('/courses/{id}', [CoursesController::class, 'destroy'])
+        ->name('courses.destroy')->middleware('auth');
+
+    Route::get('/cursos', [CoursesController::class, 'cursos'])
+        ->name('cursos');
+
+    Route::get('/cursos/{id}', [CoursesController::class, 'cursoDetail'])
+        ->name('cursos.detail');
+        
+    //Route of logins
+    Route::get('/login', [LoginController::class, 'login'])
+        ->name('login')->middleware('guest');
+    
+    Route::post('login', [LoginController::class, 'store'])
+        ->name('login.store');
+
+    Route::post('/logout', [LoginController::class, 'logout'])
+        ->name('logout');
+
+    Route::get('/register', [LoginController::class, 'register'])
+        ->name('register')->middleware('guest');
+    
+    Route::get('/check-username', [UsersController::class, 'checkUsername'])
+        ->name('check-username');
+
+    Route::get('/aboutus', [AboutUsController::class, 'index'])
+        ->name('aboutus');
+
+    Route::get('/contact', [ContactController::class, 'index'])
+        ->name('contact.index');
+
+    Route::post('/contact', [ContactController::class, 'store'])
+        ->name('contact.store');
+
+
+    //Routes of dashboard
+
+    Route::get('/dashboard/admin', [AdminController::class, 'index'])
+        ->name('admin')->middleware('auth');
 
     Route::view('dashboard','dashboard.dashboard')->middleware('auth');
-
 
     Route::get('/dashboard/perfil', [ProfileController::class, 'edit'])
         ->name('profile.edit')->middleware('auth');

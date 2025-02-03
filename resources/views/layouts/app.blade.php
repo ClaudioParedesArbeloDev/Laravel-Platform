@@ -44,7 +44,7 @@
             <a href="{{ route('home') }}">
                 <li>{{ __('home') }}</li>
             </a>
-            <a href="">
+            <a href="{{route('cursos')}}">
                 <li>{{ __('courses') }}</li>
             </a>
             <a href="{{route('blogs.index')}}">
@@ -68,6 +68,9 @@
                     <p>{{ __('Log in') }}</p>
                 </i></a>
         @endguest
+        @auth
+            <a href="dashboard" class="btnPlatform"><p>{{__('Platform')}}</p></a>
+        @endauth
 
         </div>
 

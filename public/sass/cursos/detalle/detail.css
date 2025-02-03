@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
 :root {
   --background: #e0e1dd;
   --surface: #b5d9e0;
@@ -37,64 +38,43 @@
   --toggle-thumb: #B8860B;
 }
 
-body {
-  background: var(--card-background);
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-self: center;
+  color: var(--text-primary);
+  justify-content: center;
+  align-items: center;
+}
+.container img {
+  width: 500px;
+  margin: 80px;
 }
 
-.formWrapper {
+.courseDetail {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  font-family: "Space Grotesk", serif;
   color: var(--text-primary);
 }
-
-.formCreate {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: "Space Grotesk", serif;
-  color: var(--text-primary);
+.courseDetail h3 {
+  font-family: "Roboto Mono", serif;
+  font-weight: 300;
+}
+.courseDetail h1 {
+  font-family: "Source Code Pro", serif;
+}
+.courseDetail p {
+  font-family: "Roboto Mono", serif;
 }
 
-.formLabel {
-  padding: 10px;
-}
-
-.formInput {
-  border: none;
-  padding: 10px;
-  width: 600px;
-}
-
-.formText {
-  border: none;
-  padding: 10px;
-  width: 600px;
-  height: auto;
-}
-
-.formButton {
-  padding: 10px;
-  border: none;
-  background: var(--primary-variant);
-  color: var(--background);
-  font-family: "Space Grotesk", serif;
-  margin: 20px;
-  cursor: pointer;
-}
-
-.btnBack {
-  grid-column: 1;
-  border: 1px solid var(--text-primary);
-  border-radius: 5px;
-  color: var(--text-primary);
-  padding: 10px;
-  position: absolute;
-  top: 60px;
-  right: 200px;
-  font-family: "Space Grotesk", serif;
-  width: 50px;
-  cursor: pointer;
+.btnEnroll {
+  margin: 40px 0;
   text-align: center;
-}/*# sourceMappingURL=create.css.map */
+  background: var(--secondary);
+  font-family: "Roboto Mono", serif;
+  width: 200px;
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text-primary);
+}/*# sourceMappingURL=detail.css.map */

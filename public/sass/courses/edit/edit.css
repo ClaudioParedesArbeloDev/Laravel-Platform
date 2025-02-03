@@ -41,60 +41,58 @@ body {
   background: var(--card-background);
 }
 
-.formWrapper {
+.EditWrapper {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  font-family: "Space Grotesk", serif;
+  font-family: "space grotesk", serif;
   color: var(--text-primary);
 }
 
 .formCreate {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  justify-self: center;
+}
+.formCreate label {
+  font-size: 1.2em;
+  padding: 5px;
+  margin: 10px 30px;
+}
+.formCreate input {
+  padding: 10px;
+  width: 400px;
+  height: 20px;
+}
+.formCreate button {
   font-family: "Space Grotesk", serif;
-  color: var(--text-primary);
-}
-
-.formLabel {
-  padding: 10px;
-}
-
-.formInput {
-  border: none;
-  padding: 10px;
-  width: 600px;
-}
-
-.formText {
-  border: none;
-  padding: 10px;
-  width: 600px;
-  height: auto;
-}
-
-.formButton {
-  padding: 10px;
-  border: none;
-  background: var(--primary-variant);
+  font-size: 1.2rem;
+  background: var(--success);
   color: var(--background);
-  font-family: "Space Grotesk", serif;
-  margin: 20px;
+  border: none;
+  border-radius: 10px;
+  height: 40px;
+  width: 250px;
+  margin: 20px 5px 20px 5px;
+  justify-self: end;
   cursor: pointer;
+  grid-column: 2;
 }
 
-.btnBack {
-  grid-column: 1;
-  border: 1px solid var(--text-primary);
-  border-radius: 5px;
-  color: var(--text-primary);
-  padding: 10px;
-  position: absolute;
-  top: 60px;
-  right: 200px;
+.btnCancel {
   font-family: "Space Grotesk", serif;
-  width: 50px;
-  cursor: pointer;
   text-align: center;
-}/*# sourceMappingURL=create.css.map */
+  font-size: 1.2rem;
+  background: var(--error);
+  color: var(--background);
+  border: none;
+  width: 250px;
+  height: 40px;
+  align-content: center;
+  border-radius: 10px;
+  justify-self: end;
+  text-decoration: none;
+  grid-column: 4;
+  margin-top: 20px;
+}/*# sourceMappingURL=edit.css.map */

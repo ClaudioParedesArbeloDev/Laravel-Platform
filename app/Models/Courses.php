@@ -7,6 +7,10 @@ use App\Models\User;
 
 class Courses extends Model
 {
+    protected $casts = [
+        'active' => 'boolean',
+    ];
+
     public function classes()
     {
         return $this->hasMany(ClassModel::class);

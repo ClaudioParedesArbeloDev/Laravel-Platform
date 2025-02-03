@@ -24,7 +24,7 @@
                 <button type="submit">Login</button>
             </div>
         </form>
-        <a href="{{route('register')}}" class="signup">{{__('Don\'t have an account? Sign up here!')}}</a>
+        
 
     </div>
 

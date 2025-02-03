@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.dashLayouts')
 
 @section('title', 'Code & Lens - Create Course')
 
@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="{{asset('sass/courses/create/create.css')}}">
 <div class="formWrapper">
 <h2 class="titleCreate">{{__('Create Course')}}</h2>
+<a class="btnBack" href="{{route('admin')}}"><i class="fa-solid fa-arrow-rotate-left"></i></a>
 <form action="{{route('courses.index')}}" method="POST" class="formCreate">
     @csrf
     <label class="formLabel" for="name">{{__('Title')}}:</label>
@@ -39,7 +40,10 @@
 
     <label class="formLabel" for="category">{{__('Category')}}:</label>
 
-    <input class="formInput" type="text"  id="category" name="category" >
+    <select name="category" id="category" class="formInput">
+        <option value="programacion">{{__('Programming')}}</option>
+        <option value="fotografia">{{__('Photography')}}</option>
+        <option value="filmmaking">{{__('Filmmaking')}}</option>
 
     <label class="formLabel" for="active">{{__('Active')}}:</label>
     

@@ -288,5 +288,23 @@ input[type="checkbox"]:checked + .toggle .moon {
     }
 }
 
+.btnPlatform{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-primary);
+    text-decoration: none;
+    border: 1px solid var(--text-primary);
+    border-radius: 10px;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+        p{
+            font-family: 'space grotesk', serif;
+            text-transform: lowercase;
+            margin: 0;
+        }   
+}
 
-
+.btnPlatform:hover{
+    background-color: var(--secondary);
+}
