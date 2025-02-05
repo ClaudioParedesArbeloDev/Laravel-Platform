@@ -123,13 +123,6 @@
             });
         @endif
 
-        @if (session('success'))
-            Swal.fire({
-                icon: 'success',
-                title: '{{ __("Success") }}',
-                text: '{{ session("success") }}',
-            });
-        @endif
     </script>
     <script src="{{ asset('js/login.js') }}"></script>
 @endsection

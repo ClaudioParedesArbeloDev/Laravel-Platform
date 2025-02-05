@@ -8,7 +8,11 @@
 <div class="formWrapper">
 <h2 class="titleCreate">{{__('Create Course')}}</h2>
 <a class="btnBack" href="{{route('admin')}}"><i class="fa-solid fa-arrow-rotate-left"></i></a>
-<form action="{{route('courses.index')}}" method="POST" class="formCreate">
+<form 
+    action="{{route('courses.index')}}" 
+    method="POST" class="formCreate"
+    enctype="multipart/form-data"
+    >
     @csrf
     <label class="formLabel" for="name">{{__('Title')}}:</label>
         
@@ -18,21 +22,17 @@
     
     <input class="formInput" type="text"  id="description" name="description" >
 
-    <label class="formLabel" for="image">{{__('Image')}}:</label>
-    
-    <input class="formInput" type="text" id="image" name="image" >
-
     <label class="formLabel" for="price">{{__('Price')}}:</label>
     
     <input class="formInput" type="text" id="price" name="price" >
 
-    <label class="formLabel" for="days">{{__('Days')}}:</label>
+    <label class="formLabel" for="days1">{{__('Days1')}}:</label>
 
-    <input class="formInput" type="text" id="days" name="days" >
+    <input class="formInput" type="text" id="days1" name="days1" >
 
-    <label class="formLabel" for="schedule">{{__('Schedule')}}:</label>
+    <label class="formLabel" for="days2">{{__('Days2')}}:</label>
 
-    <input class="formInput" type="text" id="schedule" name="schedule" >
+    <input class="formInput" type="text" id="days2" name="days2" >
 
     <label class="formLabel" for="duration">{{__('Duration')}}:</label>
 
@@ -58,6 +58,10 @@
         <option value="{{ $user->id }}">{{ $user->name }}</option>
     @endforeach
     </select>
+
+    <label class="formLabel" for="image">{{__('Image')}}:</label>
+    
+    <input class="formInput" type="file" id="image" name="image"  accept="image/*">
         
     <button class="formButton" type="submit">{{__('Create')}}</button>
 </form>

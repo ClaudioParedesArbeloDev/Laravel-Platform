@@ -53,6 +53,9 @@ body {
   color: var(--text-primary);
   font-family: "Space Grotesk", serif;
 }
+.courseContainer img {
+  width: 200px;
+}
 
 .btnEdit {
   grid-column: 2;

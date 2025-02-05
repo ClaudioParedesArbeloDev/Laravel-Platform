@@ -29,14 +29,14 @@
     
             <input type="text" id="price" name="price" value="{{$course->price}}">
     
-            <label for="days">{{__('Days')}}:</label>
+            <label for="days1">{{__('Days')}}:</label>
     
-            <input type="text" id="days" name="days" value="{{$course->days}}">
+            <input type="text" id="days1" name="days1" value="{{$course->days1}}">
     
-            <label for="schedule">{{__('Schedule')}}:</label>
+            <label for="days2">{{__('Days')}}:</label>
     
-            <input type="text" id="schedule" name="schedule" value="{{$course->schedule}}">
-    
+            <input type="text" id="days2" name="days2" value="{{$course->days2}}">
+        
             <label for="duration">{{__('Duration')}}:</label>
     
             <input type="text" id="duration" name="duration" value="{{$course->duration}}">

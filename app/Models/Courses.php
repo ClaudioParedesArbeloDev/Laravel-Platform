@@ -23,6 +23,6 @@ class Courses extends Model
 
     public function students()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class)->withPivot('enroll_day');
     }
 }

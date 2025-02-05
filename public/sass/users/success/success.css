@@ -38,48 +38,12 @@
   --toggle-thumb: #B8860B;
 }
 
-.container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.success {
+  font-family: "Roboto Mono", serif;
   color: var(--text-primary);
-  justify-content: center;
-  align-items: center;
-  margin-left: 100px;
-}
-.container img {
-  width: 500px;
-  margin: 80px;
-}
-
-.courseDetail {
+  width: 100vw;
   display: flex;
   flex-direction: column;
-  color: var(--text-primary);
-}
-.courseDetail h3 {
-  font-family: "Roboto Mono", serif;
-  font-weight: 300;
-}
-.courseDetail h1 {
-  font-family: "Source Code Pro", serif;
-}
-.courseDetail p {
-  font-family: "Roboto Mono", serif;
-}
-.courseDetail select {
-  border: none;
-  padding: 10px;
-  background: var(--secondary);
-}
-
-.btnEnroll {
-  margin: 40px 0;
+  justify-content: center;
   text-align: center;
-  background: var(--secondary);
-  font-family: "Roboto Mono", serif;
-  width: 200px;
-  padding: 10px;
-  border-radius: 10px;
-  text-decoration: none;
-  color: var(--text-primary);
-}/*# sourceMappingURL=detail.css.map */
+}/*# sourceMappingURL=success.css.map */

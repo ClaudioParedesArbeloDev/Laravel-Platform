@@ -57,19 +57,22 @@
                 <li>{{ __('contact') }}</li>
             </a>
         </nav>
+        
         <div class="navLogin">
-
-            <div class="lang">
-                <a href="/locale/en"><img src="{{asset('images/england.jpg')}}" alt="England Flag"></a>
-                <a href="/locale/es"><img src="{{asset('images/spain.jpg')}}" alt="Spain Flag"></a>
-            </div>
         @guest
             <a href="{{ route('login') }}" class="login"><i class="fa-solid fa-user">
                     <p>{{ __('Log in') }}</p>
                 </i></a>
         @endguest
         @auth
-            <a href="dashboard" class="btnPlatform"><p>{{__('Platform')}}</p></a>
+            <a href="/dashboard" class="btnPlatform">
+                @if (Auth::user()->avatar == null)
+                    <img src="{{asset('images/avatars/avatar.png')}}" alt="avatar" class="avatarSidebar">
+                @else
+                    <img src="{{asset('storage/'.Auth::user()->avatar->avatar)}}" alt="avatar" class="avatarSidebar">                    
+                @endif
+                <p>{{__('Hello')}}</p>
+                <p> {{Auth::user()->name}}</p></a>
         @endauth
 
         </div>
@@ -87,6 +90,10 @@
     @yield('content')
 
     <footer class="footerIndex">
+        <div class="lang">
+            <a href="/locale/en"><img src="{{asset('images/england.jpg')}}" alt="England Flag"></a>
+            <a href="/locale/es"><img src="{{asset('images/spain.jpg')}}" alt="Spain Flag"></a>
+        </div>
         <p class="copyright">Copyright &copy; {{ date('Y') }} Code & Lens Platform</p>
         <div class="socialMediaFooter">
             <a href="https://www.linkedin.com/in/claudioparedesarbelo/" target="blank" class="iconSocialMedia"><i

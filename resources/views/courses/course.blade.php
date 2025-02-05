@@ -12,12 +12,13 @@
     <h3>{{__('Title')}}: {{ $course->name }}</h3>
     <p>{{__('Teacher')}}: {{ $course->user->name }}</p>
     <p>{{__('Description')}}: {{ $course->description }}</p>
-    <p>{{__('Price')}}: {{ $course->price }}</p>
-    @if (($course->days != null) || ($course->days != ''))
-        <p>{{__('Days')}}: {{ $course->days }}</p>
+    <p>{{ __('Price') }}: {{ $course->price == 0.00 ? 'Free' : '$' . number_format($course->price, 2) }}</p>
+    
+    @if (($course->days1 != null) || ($course->days1 != ''))
+        <p>{{__('Days')}}: {{ $course->days1 }}</p>
     @endif
-    @if (($course->schedule != null) || ($course->schedule != ''))
-        <p>{{__('Schedule')}}: {{ $course->schedule }}</p>
+    @if (($course->schedule != null) || ($course->days2 != ''))
+        <p>{{__('Days')}}: {{ $course->days2 }}</p>
         
     @endif
     @if (($course->duration != null) || ($course->duration != ''))
@@ -31,11 +32,9 @@
     @endif
     @if (($course->active != null) || ($course->active != ''))
         <p>{{__('Active')}}: {{ $course->active ? __('Active') : __('Inactive') }}</p>
-    @endif
-
-    
+    @endif    
     @if ($course->image != null)
-        <img src="{{ asset($course->image) }}" alt="courseImage">    
+        <img src="{{ asset('storage/courses/'.$course->image) }}" alt="courseImage">    
     @endif
     <div class="btnEditCourses">
         <a href="/courses/{{$course->id}}/edit" class = 'btnEdit'>{{__('Edit Course')}}</a>

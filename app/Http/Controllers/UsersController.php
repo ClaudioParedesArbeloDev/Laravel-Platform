@@ -103,8 +103,8 @@ class UsersController extends Controller
         if($role){
             $user->roles()->attach($role);
         }
-
-        return redirect('/login')->with('success', 'User registered successfully!');;
+        session()->flash('success', 'User registered successfully!');
+        return redirect('/success');
     }
 
     public function show($id)

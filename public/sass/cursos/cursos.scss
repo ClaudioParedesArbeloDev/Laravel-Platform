@@ -51,9 +51,36 @@
 }
 
 .btnCourse{
+    
     background: var(--secondary);
     padding: 10px;
     border-radius: 10px;
     text-decoration: none;
     color: var(--text-primary);
+    transition: background 0.3s ease-in-out;
+    z-index: 0;
+
+    &:hover {
+        background-color: var(--toggle-thumb);
+    }
+
+    &::after {
+        z-index: 1;
+        content: attr(data-tooltip);
+        opacity: 0;
+        white-space: nowrap;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    &:hover::after {
+        opacity: 1;
+    }
+
+    span {
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    &:hover span {
+        opacity: 0;
+    }
 }

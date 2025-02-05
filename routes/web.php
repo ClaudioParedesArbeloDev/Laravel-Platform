@@ -116,6 +116,8 @@ Route::middleware(LocaleCookie::class)->group(function () {
     Route::get('/check-username', [UsersController::class, 'checkUsername'])
         ->name('check-username');
 
+
+    //Routes of home
     Route::get('/aboutus', [AboutUsController::class, 'index'])
         ->name('aboutus');
 
@@ -124,6 +126,11 @@ Route::middleware(LocaleCookie::class)->group(function () {
 
     Route::post('/contact', [ContactController::class, 'store'])
         ->name('contact.store');
+
+    Route::get('/success', function () {
+        return view('users.success');
+    });
+        
 
 
     //Routes of dashboard
@@ -139,6 +146,11 @@ Route::middleware(LocaleCookie::class)->group(function () {
     Route::put('/dashboard/update', [ProfileController::class, 'update'])
         ->name('profile.update')->middleware('auth');
     
+    //Payment
+
+    Route::post('courses/enroll', [CoursesController::class, 'enroll'])->name('courses.enroll');
+    
+
 });
 
 

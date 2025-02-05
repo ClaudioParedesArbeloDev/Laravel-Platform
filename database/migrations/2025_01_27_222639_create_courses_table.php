@@ -17,8 +17,10 @@ return new class extends Migration
             $table->text('description');
             $table->string('image')->nullable();
             $table->decimal('price', 10, 2);
-            $table->string('days')->nullable();
-            $table->string('schedule')->nullable();
+            $table->string('days1')->nullable();
+            $table->string('days2')->nullable();
+            $table->integer('enroll_day_1')->default(20);
+            $table->integer('enroll_day_2')->default(20);
             $table->string('duration')->nullable();
             $table->string('category')->nullable();
             $table->integer('capacity')->nullable();

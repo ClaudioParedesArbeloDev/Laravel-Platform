@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Courses;
 use App\Models\User;
 
@@ -26,24 +27,38 @@ class CoursesController extends Controller
     }
 
     public function store(Request $request)
-    {
-        $curse = new Courses();
+{
+    $course = new Courses();
 
-        $curse->name = $request->name;
-        $curse->description = $request->description;
-        $curse->image = $request->image;
-        $curse->price = $request->price;
-        $curse->days = $request->days;
-        $curse->schedule = $request->schedule;
-        $curse->duration = $request->duration;
-        $curse->category = $request->category;
-        $curse->capacity = $request->capacity;
-        $curse->user_id = $request->user_id;
-        $curse->active = $request->active;
+    $course->name = $request->name;
+    $course->description = $request->description;
+    $course->image = $request->image;
+    $course->price = $request->price;
+    $course->days1 = $request->days1;
+    $course->days2 = $request->days2;
+    $course->duration = $request->duration;
+    $course->category = $request->category;
+    $course->capacity = $request->capacity;
+    $course->user_id = $request->user_id;
+    $course->active = $request->active;
+    
 
-        $curse->save();
-        return redirect()->route('courses.index');
+
+    if ($request->hasFile('image')) {
+        $imageName = time().'.'.$request->image->extension(); 
+        $request->image->storeAs('courses', $imageName, 'public');
+        $course->image = $imageName; 
     }
+
+
+    
+    
+    $course->save();
+
+    
+    
+    return redirect()->route('courses.index');
+}
 
     public function show($id)
     {
@@ -69,8 +84,8 @@ class CoursesController extends Controller
         $course->description = $request->description;
         $course->image = $request->image;
         $course->price = $request->price;
-        $course->days = $request->days;
-        $course->schedule = $request->schedule;
+        $course->days1 = $request->days1;
+        $course->days2 = $request->days2;
         $course->duration = $request->duration;
         $course->category = $request->category;
         $course->capacity = $request->capacity;
@@ -108,4 +123,37 @@ class CoursesController extends Controller
         return view('courses.courseDetail', compact('course', 'id'));
     }
 
+    public function enroll(Request $request)
+    {    
+        $user = Auth::user();
+        $course = Course::findOrFail($request->input('course_id'));
+        $selectedDay = $request->input('day');
+
+      
+        if ($user->courses->contains($course->id)) {
+            return back()->with('error', 'Ya estás inscrito en este curso.');
+        }
+
+    
+        if ($selectedDay == 1 && $course->enroll_day_1 <= 0) {
+            return back()->with('error', 'No hay más cupos disponibles para el Día 1.');
+        }
+
+        if ($selectedDay == 2 && $course->enroll_day_2 <= 0) {
+            return back()->with('error', 'No hay más cupos disponibles para el Día 2.');
+        }
+
+       
+        $user->courses()->attach($course->id, ['enroll_day' => $selectedDay]);
+
+       
+        if ($selectedDay == 1) {
+            $course->decrement('enroll_day_1');
+        } elseif ($selectedDay == 2) {
+            $course->decrement('enroll_day_2');
+        }
+
+        return back()->with('success', 'Te has inscrito correctamente en el curso.');
+    }
+    
 }

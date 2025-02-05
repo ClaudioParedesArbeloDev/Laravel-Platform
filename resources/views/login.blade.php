@@ -21,7 +21,7 @@
                 <input type="checkbox" id="remember" name="remember" class="rememberMe">
                 <label for="remember">{{__('Remember me')}}</label>
                 </div>
-                <button type="submit">Login</button>
+                <button type="submit">{{__('Login')}}</button>
             </div>
         </form>
         

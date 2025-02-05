@@ -98,6 +98,6 @@ class User extends Authenticatable
     }
 
     public function courses(){
-        return $this->hasMany(Courses::class);
+        return $this->belongsToMany(Course::class)->withPivot('enroll_day');
     }
 }

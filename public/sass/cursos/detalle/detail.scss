@@ -5,10 +5,10 @@
 .container{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    justify-self: center;
     color: var(--text-primary);
     justify-content: center;
     align-items: center;
+    margin-left: 100px;
     img{
         width: 500px;
         margin: 80px;
@@ -29,6 +29,12 @@
     p{
         font-family: "Roboto Mono", serif;
     }
+    select{
+        border: none;
+        padding: 10px;
+        background: var(--secondary);
+    }
+
 }
 
 .btnEnroll{
