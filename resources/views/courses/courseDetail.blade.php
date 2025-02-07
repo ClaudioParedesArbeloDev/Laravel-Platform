@@ -16,37 +16,43 @@
                 @if (empty($course->days2))
                     <span>{{$course->days1}}</span>
                 @else
-                    <select name="days" id="days">
-                        <option value="1">{{$course->days1}}</option>
-                        <option value="2">{{$course->days2}}</option>
-                    </select>
+                <select name="days" id="days">
+                    <option value="" disabled selected>Seleccione horario</option>
+                    <option value="1">{{ $course->days1 }}</option>
+                    <option value="2">{{ $course->days2 }}</option>
+                </select>
                 
                 @endif
             </p>
             <p>{{ __('Price') }}: {{ $course->price == 0.00 ? 'Free' : 'u$s' . number_format($course->price, 2) }}</p>
-            @auth
-            @if($course->price == 0.00)
-                <form action="{{ route('courses.enroll') }}" method="POST">
-                    @csrf
-                    <input type="hidden" name="course_id" value="{{ $course->id }}">
-                    <input type="hidden" name="day" id="selectedDay" value="">
-                    <button type="submit" class="btnEnroll">{{__('Enroll')}}</button>
-                </form>
-            @else
-                <a href="{{ route('payment.gateway', ['course' => $course->id]) }}" class="btnEnroll">{{__('Proceed to Payment')}}</a>
-            @endif
+
+           
+        @if (Auth::check())
+            <form action="{{route('courses.enroll')}}" method="POST">
+            @csrf
+                <input type="hidden" name="user_id" value="{{auth()->user()->id}}">
+                <input type="hidden" name="course_id" value="{{$course->id}}">
+                <input type="hidden" id="hidden_enroll_day" name="enroll_day">
+                <button type="submit" class="btnEnroll">{{__('Enroll')}}</button>
+            </form>
         @else
-            <a href="{{ route('login') }}" class="btnEnroll">{{__('Login to Enroll')}}</a>
-            <p>{{__('Don\'t have an account?'  )}}  <a href="{{route('users.create')}}">{{__('Sign up here!!!')}}</a></p>
-        @endauth
+            <a href="{{ route('login') }}?redirect={{ urlencode(url()->current()) }}" class="btnEnroll" id="loginBtn">{{__('Login to Enroll')}}</a>
+            <p>{{__('Don\'t have an account?'  )}}  <a href="{{route('users.create')}}?redirect={{ urlencode(url()->current()) }}">{{__('Sign up here!!!')}}</a></p>
+        @endif 
         </div>
         <img src="{{asset('storage/courses/'.$course->image)}}" alt="">
 
     </div>
-    <script>
-        document.getElementById('days')?.addEventListener('change', function() {
-            document.getElementById('selectedDay').value = this.value;
-        });
-    </script>
-
+    @if (session('error'))
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: '¡Error!',
+                text: '{{ session('error') }}',
+                confirmButtonText: 'Cerrar'
+            });
+        </script>
+    @endif
+   
+    <script src="{{asset('js/enroll.js')}}"></script>
 @endsection

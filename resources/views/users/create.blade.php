@@ -51,7 +51,7 @@
             
             <div class="input-group">
                 <label for="email">{{ __('Email') }}:</label>
-                <input type="text" id="email" name="email" value="{{ old('email') }}" required>
+                <input type="email" id="email" name="email" value="{{ old('email') }}" required>
                 @error('email')
                     <span class="error-message">{{ $message }}</span>
                 @enderror
@@ -103,6 +103,8 @@
                     <span class="error-message">{{ $message }}</span>
                 @enderror
             </div>
+
+            <input type="hidden" name="redirect" value="{{ request()->get('redirect', route('success')) }}">
 
             <button type="submit" class="btn-register">{{ __('Register') }}</button>
         </form>

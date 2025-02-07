@@ -14,6 +14,7 @@ use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\InstructorController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Middleware\LocaleCookie;
 use App\Mail\ContactMailable;
 
@@ -127,18 +128,31 @@ Route::middleware(LocaleCookie::class)->group(function () {
     Route::post('/contact', [ContactController::class, 'store'])
         ->name('contact.store');
 
-    Route::get('/success', function () {
-        return view('users.success');
-    });
+    Route::get('/success', function () {return view('users.success');
+        })->name('success');
         
+        
+    //Routes Password Reset
+    Route::get('/forgot-password', function () {return view('auth.passwords.email');})
+        ->middleware('guest')->name('password.request');
 
+    Route::post('/forgot-password', [ResetPasswordController::class, 'send'])
+        ->middleware('guest')->name('password.email');
+    
+    Route::get('/reset-password/{token}', function (string $token) {
+            return view('auth.passwords.reset', ['token' => $token]);
+        })->middleware('guest')->name('password.reset');
+
+    Route::post('/reset-password', [ResetPasswordController::class, 'reset'])
+        ->middleware('guest')->name('password.update');
 
     //Routes of dashboard
 
     Route::get('/dashboard/admin', [AdminController::class, 'index'])
         ->name('admin')->middleware('auth');
 
-    Route::view('dashboard','dashboard.dashboard')->middleware('auth');
+    Route::view('dashboard', 'dashboard.dashboard')->middleware('auth')
+        ->name('dashboard');
 
     Route::get('/dashboard/perfil', [ProfileController::class, 'edit'])
         ->name('profile.edit')->middleware('auth');
@@ -148,7 +162,8 @@ Route::middleware(LocaleCookie::class)->group(function () {
     
     //Payment
 
-    Route::post('courses/enroll', [CoursesController::class, 'enroll'])->name('courses.enroll');
+    Route::post('courses/enroll', [CoursesController::class, 'enroll'])
+        ->name('courses.enroll');
     
 
 });

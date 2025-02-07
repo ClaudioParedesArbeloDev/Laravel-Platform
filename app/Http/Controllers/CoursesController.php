@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use App\Models\Courses;
+use App\Models\Course;
 use App\Models\User;
 
 class CoursesController extends Controller
 {
     public function index()
     {
-        $courses = Courses::with('user')
+        $courses = Course::with('user')
             ->orderBy('category', 'asc')
             ->paginate(10);
         return view('courses.courses', compact('courses'));
@@ -28,7 +28,7 @@ class CoursesController extends Controller
 
     public function store(Request $request)
 {
-    $course = new Courses();
+    $course = new Course();
 
     $course->name = $request->name;
     $course->description = $request->description;
@@ -62,13 +62,13 @@ class CoursesController extends Controller
 
     public function show($id)
     {
-        $course = Courses::findOrFail($id);
+        $course = Course::findOrFail($id);
         return view('courses.course', compact('course', 'id'));
     }
 
     public function edit($id)
     {
-        $course = Courses::findOrFail($id);
+        $course = Course::findOrFail($id);
         $users = User::whereHas('roles', function ($query) {
             $query->whereIn('name', ['admin', 'instructor']);
         })->get();
@@ -78,7 +78,7 @@ class CoursesController extends Controller
 
     public function update(Request $request, $id)
     {
-        $course = Courses::findOrFail($id);
+        $course = Course::findOrFail($id);
 
         $course->name = $request->name;
         $course->description = $request->description;
@@ -99,7 +99,7 @@ class CoursesController extends Controller
 
     public function destroy($id)
     {
-        $course = Courses::findOrFail($id);
+        $course = Course::findOrFail($id);
         $course->delete();
 
         return redirect()->route('courses.index');
@@ -107,7 +107,7 @@ class CoursesController extends Controller
 
     public function cursos()
     {
-        $courses = Courses::with('user')
+        $courses = Course::with('user')
             ->orderBy('category', 'asc')
             ->paginate(10);
         
@@ -119,41 +119,49 @@ class CoursesController extends Controller
 
     public function cursoDetail($id)
     {
-        $course = Courses::findOrFail($id);
+        $course = Course::findOrFail($id);
         return view('courses.courseDetail', compact('course', 'id'));
     }
 
     public function enroll(Request $request)
-    {    
-        $user = Auth::user();
-        $course = Course::findOrFail($request->input('course_id'));
-        $selectedDay = $request->input('day');
+    {
+        $request->validate([
+            'user_id' => 'required',
+            'course_id' => 'required',
+            'enroll_day' => 'nullable',
+        ]);
 
-      
-        if ($user->courses->contains($course->id)) {
-            return back()->with('error', 'Ya estás inscrito en este curso.');
+        $user = User::findOrFail($request->user_id);
+        
+        $course = Course::findOrFail($request->course_id);
+
+        $enroll_day = $request->enroll_day;
+
+        $columnName = 'enroll_day_'.$enroll_day;
+
+        $isEnrolled = $user->courses()->where('course_id', $request->course_id)->exists();
+
+        if ($isEnrolled) {
+            return redirect()->back()->with('error', 'Ud. ya está inscrito en este curso');
         }
 
-    
-        if ($selectedDay == 1 && $course->enroll_day_1 <= 0) {
-            return back()->with('error', 'No hay más cupos disponibles para el Día 1.');
+        if(empty($course->days2)){
+
+            $user->courses()->attach($request->course_id);   
+            
+            return redirect()->route('dashboard');
+
+        } else{
+            if($course->{$columnName}== 0){
+                return redirect()->back()->with('error', 'No hay cupos disponibles para este dia');
+            }
+            $user->courses()->attach($request->course_id, ['enroll_day' => $request->enroll_day]);
+            $course->decrement($columnName, 1);
+            return redirect()->route('dashboard');
         }
-
-        if ($selectedDay == 2 && $course->enroll_day_2 <= 0) {
-            return back()->with('error', 'No hay más cupos disponibles para el Día 2.');
-        }
-
-       
-        $user->courses()->attach($course->id, ['enroll_day' => $selectedDay]);
-
-       
-        if ($selectedDay == 1) {
-            $course->decrement('enroll_day_1');
-        } elseif ($selectedDay == 2) {
-            $course->decrement('enroll_day_2');
-        }
-
-        return back()->with('success', 'Te has inscrito correctamente en el curso.');
+        
+        
+        
     }
     
 }

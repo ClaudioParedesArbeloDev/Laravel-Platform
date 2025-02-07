@@ -23,7 +23,7 @@ return new class extends Migration
                 ->references('id')
                 ->on('users')
                 ->onDelete('cascade');
-            $table->integer('enroll_day');
+            $table->integer('enroll_day')->nullable();
             $table->timestamps();
         });
     }

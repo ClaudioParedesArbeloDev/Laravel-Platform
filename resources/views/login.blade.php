@@ -15,12 +15,20 @@
             <div class="loginForm">
                 <label for="email">{{__('Email')}}:</label>
                 <input type="email" id="email" name="email" required class="inputLogin">
+
                 <label for="password">{{__('Password')}}:</label>
                 <input type="password" id="password" name="password" required class="inputLogin">
+
                 <div class='checkRemember'>
                 <input type="checkbox" id="remember" name="remember" class="rememberMe">
                 <label for="remember">{{__('Remember me')}}</label>
                 </div>
+
+                <a href="{{route('password.request')}}">{{__('Forgot password?')}}</a>
+
+                <input type="hidden" name="redirect" value="{{ request()->get('redirect', route('dashboard')) }}">
+
+
                 <button type="submit">{{__('Login')}}</button>
             </div>
         </form>

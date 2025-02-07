@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 
-class Courses extends Model
+class Course extends Model
 {
     protected $casts = [
         'active' => 'boolean',
@@ -23,6 +23,7 @@ class Courses extends Model
 
     public function students()
     {
-        return $this->belongsToMany(User::class)->withPivot('enroll_day');
+        return $this->belongsToMany(User::class, 'course_user')
+            ->withPivot('enroll_day')->withTimestamps();;
     }
 }

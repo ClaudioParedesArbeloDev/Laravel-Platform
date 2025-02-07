@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Contracts\Auth\CanResetPassword;
 use App\Models\Role;
 use App\Models\Avatar;
 use App\Models\Courses;
@@ -98,6 +99,7 @@ class User extends Authenticatable
     }
 
     public function courses(){
-        return $this->belongsToMany(Course::class)->withPivot('enroll_day');
+        return $this->belongsToMany(Course::class, 'course_user')
+            ->withPivot('enroll_day')->withTimestamps();
     }
 }

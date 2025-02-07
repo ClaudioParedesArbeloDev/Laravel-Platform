@@ -104,7 +104,7 @@ class UsersController extends Controller
             $user->roles()->attach($role);
         }
         session()->flash('success', 'User registered successfully!');
-        return redirect('/success');
+        return redirect()->intended($request->input('redirect', route('success')));
     }
 
     public function show($id)

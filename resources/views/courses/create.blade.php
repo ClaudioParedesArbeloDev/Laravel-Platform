@@ -64,6 +64,7 @@
     <input class="formInput" type="file" id="image" name="image"  accept="image/*">
         
     <button class="formButton" type="submit">{{__('Create')}}</button>
+    
 </form>
 </div>
 
