@@ -5,14 +5,22 @@
 @section('content')
     <link rel="stylesheet" href="{{asset('sass/dashboard/index.css') }}">
     <div class="dashboardWrapper">
-        <h1>Dashboard</h1>
-        <p>Hola {{ Auth::user()->name }}</p>
-        <p>@foreach (Auth::user()->courses as $course)
-            <h2>{{ $course->name }}</h2>
-            <p>{{ $course->enroll_day }}</p>
+        
+        <p class="welcome">Hola {{ Auth::user()->name }}</p>
+        <div class="coursesContainer">@foreach (Auth::user()->courses as $course)
+            <div class="coursesWrapper">
+                <div class="courseText">
+                    <p>{{ $course->category}}</p>
+                    <h2>{{ $course->name }}</h2>
+                </div>
+                <a href="" class="btnCourse">{{__('Access the course')}}</a>
+            </div>
+            
+            
 
             
-        @endforeach</p>
+            @endforeach
+        </div>
         
     </div>
 

@@ -1,9 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+
+    <link rel="stylesheet" href="{{asset('sass/auth/reset/reset.css')}}">
+
     <div class="container">
         <h2>{{ __('Restablecer Contraseña') }}</h2>
-        <form action="{{ route('password.update') }}" method="POST">
+        <form action="{{ route('password.update') }}" method="POST" class="form-group">
             @csrf
             <input type="hidden" name="token" value="{{ $token }}">
 
@@ -28,7 +31,7 @@
                 <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" required>
             </div>
 
-            <button type="submit" class="btn btn-primary">{{ __('Restablecer Contraseña') }}</button>
+            <button type="submit" class="btn">{{ __('Restablecer Contraseña') }}</button>
         </form>
     </div>
 @endsection

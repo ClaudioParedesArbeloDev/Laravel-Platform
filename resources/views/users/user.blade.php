@@ -17,15 +17,34 @@
             @else
                 <img src="{{asset('images/avatars/avatar.png')}}" alt="avatar" class="avatarUser">
             @endif
-            <dt>{{__('Name')}}</dt> <p>{{$user->name}}</p>
-            <dt>{{__('Lastname')}}</dt> <p>{{$user->lastname}}</p>
-            <dt>{{__('Address')}}</dt> <p>{{$user->address}}</p>
-            <dt>{{__('Phone')}}</dt> <p>{{$user->phone}}</p>
-            <dt>{{__('Email')}}</dt> <p>{{$user->email}}</p>
-            <dt>DNI:</dt> <p>{{$user->dni}}</p>
-            <dt>{{__('Date of Birth')}}:</dt> <p>{{$user->date_birth}}</p>
-            <dt>{{__('Username')}}:</dt> <p>{{$user->username}}</p>
-            <dt>{{__('Rol')}}:</dt><p>@foreach($user->roles as $role)<span>{{$role->name}}</span>@if(!$loop->last), @endif @endforeach</p>
+            <dt>{{__('Name')}}</dt> 
+            <p>{{$user->name}}</p>
+            
+            <dt>{{__('Lastname')}}</dt> 
+            <p>{{$user->lastname}}</p>
+            
+            <dt>{{__('Address')}}</dt> 
+            <p>{{$user->address}}</p>
+            
+            <dt>{{__('Phone')}}</dt> 
+            <p>{{$user->phone}}</p>
+            
+            <dt>{{__('Email')}}</dt> 
+            <p>{{$user->email}}</p>
+            
+            <dt>DNI:</dt> 
+            <p>{{$user->dni}}</p>
+            
+            <dt>{{__('Date of Birth')}}:</dt> 
+            <p>{{$user->date_birth}}</p>
+            
+            <dt>{{__('Username')}}:</dt> 
+            <p>{{$user->username}}</p>
+            
+            <dt>{{__('Rol')}}:</dt><p>@foreach($user->roles as $role)
+                <span>{{$role->name}}</span>@endforeach</p>
+            <dt>{{__('Courses')}}:</dt>
+            <div>@foreach($user->courses as $course)<p>{{$course->name}}</p> @endforeach</div>
 
             <a href="/users/{{$user->id}}/edit" class = 'btnEdit'>{{__('Edit User')}}</a>
 

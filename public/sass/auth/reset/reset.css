@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
 :root {
   --background: #e0e1dd;
   --surface: #b5d9e0;
@@ -37,57 +38,34 @@
   --toggle-thumb: #B8860B;
 }
 
-body {
-  margin: 0;
-  background: var(--card-background);
-}
-
-.dashboardWrapper {
-  color: var(--text-primary);
-  padding: 30px;
-}
-
-.welcome {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 30px;
-}
-
-.coursesContainer {
+.container {
   display: flex;
-  flex-wrap: nowrap;
+  flex-direction: column;
+  color: var(--text-primary);
+  justify-self: center;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto Mono", serif;
 }
 
-.coursesWrapper {
+.form-group {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr auto;
-  background: var(--background);
-  padding: 10px;
-  margin: 20px;
-  width: 400px;
-  height: 200px;
+  grid-template-columns: 1fr 1fr;
+}
+.form-group label {
+  grid-column: 1;
+}
+.form-group input {
+  grid-column: 2;
+}
+
+.btn {
+  border: none;
   border-radius: 10px;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 1em;
-}
-
-.courseText {
-  grid-column: span 3;
-  grid-row: 1/2;
-}
-
-.btnCourse {
   background: var(--secondary);
   padding: 10px;
-  width: 130px;
-  text-decoration: none;
-  color: var(--text-primary);
-  border-radius: 10px;
-  transition: 0.3s;
-  grid-column: 3;
-  grid-row: 3;
-}
-
-.btnCourse:hover {
-  background: var(--secondary-variant);
-}/*# sourceMappingURL=index.css.map */
+  margin: 20px 0;
+  cursor: pointer;
+  grid-column: 1/2;
+  width: 120px;
+}/*# sourceMappingURL=reset.css.map */

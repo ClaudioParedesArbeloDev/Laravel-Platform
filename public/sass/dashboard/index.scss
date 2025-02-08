@@ -3,5 +3,56 @@
 
 body{
     margin: 0;
+    background: var(--card-background);
+}
+
+.dashboardWrapper{
+    color: var(--text-primary);
+    padding: 30px;
+}
+
+.welcome{
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 30px;
+}
+
+.coursesContainer{
+    display: flex;
+    flex-wrap: nowrap;
+    
+}
+
+.coursesWrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr auto;
     background: var(--background);
+    padding: 10px;
+    margin: 20px;
+    width: 400px;
+    height: 200px;
+    border-radius: 10px;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1em;
+}
+
+.courseText {
+    grid-column: span 3;
+    grid-row: 1/2;
+}
+
+.btnCourse{
+    background: var(--secondary);
+    padding: 10px;
+    width: 130px;
+    text-decoration: none;
+    color: var(--text-primary);
+    border-radius: 10px;
+    transition: 0.3s;
+    grid-column: 3;
+    grid-row: 3;
+}
+
+.btnCourse:hover{
+    background: var(--secondary-variant);
 }

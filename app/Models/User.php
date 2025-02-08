@@ -102,4 +102,5 @@ class User extends Authenticatable
         return $this->belongsToMany(Course::class, 'course_user')
             ->withPivot('enroll_day')->withTimestamps();
     }
+
 }

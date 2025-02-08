@@ -32,6 +32,15 @@
                 <button type="submit">{{__('Login')}}</button>
             </div>
         </form>
+        @if ($errors->any())
+            <script>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    html: `{!! implode('<br>', $errors->all()) !!}`,
+                });
+            </script>
+        @endif
         
 
     </div>

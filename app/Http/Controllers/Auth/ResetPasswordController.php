@@ -21,9 +21,11 @@ class ResetPasswordController extends Controller
         $request->only('email')
     );
  
-        return $status === Password::RESET_LINK_SENT
-                ? back()->with(['status' => __($status)])
-                : back()->withErrors(['email' => __($status)]);
+        if ($status === Password::RESET_LINK_SENT) {
+            return response()->json(['success' => true, 'message' => __('Se ha enviado un enlace de restablecimiento a tu correo.')]);
+        } else {
+            return response()->json(['success' => false, 'message' => __('No pudimos encontrar un usuario con ese correo.')]);
+        }
     }
 
     public function reset(Request $request)
