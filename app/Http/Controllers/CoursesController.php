@@ -163,5 +163,59 @@ class CoursesController extends Controller
         
         
     }
+
+    public function cursosDashboard()
+    {
+        $courses = Course::with('user')
+            ->orderBy('category', 'asc')
+            ->paginate(10);
+        
+        $coursesByCategory = $courses->groupBy('category');
+
+        return view('dashboard.cursos', compact('courses', 'coursesByCategory'));
+        
+    }
+
+    public function showStudents($courseId)
+    {
+        $course = Course::with(['students' => function($query) {
+            $query->orderBy('lastname', 'asc');
+        }])->findOrFail($courseId);
+
+
+        return view('dashboard.courses.students', compact('course'));
+    }
+
+    public function updateStatus(Request $request, $courseId, $userId)
+    {
+        // Obtén el estudiante y el curso
+        $course = Course::findOrFail($courseId);
+        $user = User::findOrFail($userId);
+
+        // Actualiza el estado en la tabla pivot
+        $course->students()->updateExistingPivot($user->id, [
+            'status' => $request->status
+        ]);
+
+        return redirect()->route('cursos.students', $courseId)->with('success', 'Status updated successfully!');
+    }
+
+    public function showClasses($courseId)
+{
+    $course = Course::findOrFail($courseId);  
+    $classes = $course->classes; 
+
+    return view('dashboard.courses.classesCourse', compact('course', 'classes'));
+}
+
+    public function showClassesStudents($courseId)
+{
+    $course = Course::with(['classes' => function ($query) {
+        $query->orderBy('date')->orderBy('start_time');
+    }])->findOrFail($courseId);
+
+    return view('dashboard.courses.classes', compact('course'));
+}
+
     
 }

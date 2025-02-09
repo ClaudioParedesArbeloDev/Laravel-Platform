@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
+use App\Models\Classes;
 
 class Course extends Model
 {
@@ -13,7 +14,7 @@ class Course extends Model
 
     public function classes()
     {
-        return $this->hasMany(ClassModel::class);
+        return $this->hasMany(Classes::class);
     }
 
     public function user()
@@ -24,6 +25,6 @@ class Course extends Model
     public function students()
     {
         return $this->belongsToMany(User::class, 'course_user')
-            ->withPivot('enroll_day')->withTimestamps();;
+            ->withPivot('enroll_day', 'status')->withTimestamps();;
     }
 }

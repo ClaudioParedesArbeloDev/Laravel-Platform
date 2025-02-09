@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
+:root {
+  --background: #e0e1dd;
+  --surface: #b5d9e0;
+  --text-primary: #0d1b2a;
+  --text-secondary: #1b263b;
+  --primary: #778da9;
+  --primary-variant: #415a77;
+  --secondary: #00b4d8;
+  --secondary-variant: #0096c7;
+  --success: #85BB65;
+  --warning: #FFAA00;
+  --error: #B22222;
+  --card-background: #F5F1ED;
+  --border: #DED6D1;
+  --icon-color: #B28C2F;
+  --toggle-bg: #dbd2b5;
+  --toggle-thumb: #D4AF37;
+}
+
+[data-theme=dark] {
+  --background: #0d1b2a;
+  --surface: #1b263b;
+  --text-primary: #e0e1dd;
+  --text-secondary: #BDBDBD;
+  --primary: #415a77;
+  --primary-variant: #778da9;
+  --secondary: #808080;
+  --secondary-variant: #696969;
+  --success: #32CD32;
+  --warning: #FF8C00;
+  --error: #DC143C;
+  --card-background: #222222;
+  --border: #444444;
+  --icon-color: #210d69;
+  --toggle-bg: #333333;
+  --toggle-thumb: #B8860B;
+}
+
+body {
+  background: var(--card-background);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "space grotesk", serif;
+}
+
+.coursesWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  color: var(--text-primary);
+  align-items: center;
+}
+.coursesWrapper .cardwrapper {
+  grid-column: 2;
+  display: flex;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  height: 300px;
+  margin: 40px;
+  border: 2px solid var(--primary-variant);
+  border-radius: 10px;
+}
+
+.card-header {
+  border-bottom: 1px solid var(--primary-variant);
+}
+.card-header h4 {
+  font-family: "Roboto Mono", serif;
+  font-weight: 300;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  padding: 0 30px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 0 30px;
+  font-family: "Source Code Pro", serif;
+}
+
+.btnCourse {
+  background: var(--secondary);
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: background 0.3s ease-in-out;
+  z-index: 0;
+}
+.btnCourse:hover {
+  background-color: var(--toggle-thumb);
+}
+.btnCourse::after {
+  z-index: 1;
+  content: attr(data-tooltip);
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity 0.3s ease-in-out;
+}
+.btnCourse:hover::after {
+  opacity: 1;
+}
+.btnCourse span {
+  transition: opacity 0.3s ease-in-out;
+}
+.btnCourse:hover span {
+  opacity: 0;
+}/*# sourceMappingURL=cursos.css.map */

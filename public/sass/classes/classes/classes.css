@@ -38,62 +38,26 @@
 }
 
 body {
-  margin: 0;
   background: var(--card-background);
 }
 
-.dashboardWrapper {
+.container {
+  margin: 30px;
   color: var(--text-primary);
-  padding: 30px;
-}
-.dashboardWrapper h3 {
   font-family: "montserrat", sans-serif;
+}
+.container h2 {
   font-weight: 400;
-  text-transform: uppercase;
 }
-
-.welcome {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 30px;
+.container table {
+  width: 70vw;
 }
-
-.coursesContainer {
-  display: flex;
-  flex-wrap: nowrap;
+.container table td {
+  text-align: center;
+  padding: 20px 10px;
+  border-bottom: 1px solid var(--secondary);
 }
-
-.coursesWrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr auto;
-  background: var(--background);
-  padding: 10px;
-  margin: 20px;
-  width: 400px;
-  height: 200px;
-  border-radius: 10px;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 1em;
-  border: 1px solid var(--secondary);
-}
-
-.courseText {
-  grid-column: span 3;
-  grid-row: 1/2;
-}
-
-.btnCourse {
-  background: var(--secondary);
-  padding: 10px;
-  width: 130px;
+.container table td a {
   text-decoration: none;
   color: var(--text-primary);
-  border-radius: 10px;
-  transition: 0.3s;
-  grid-column: 3;
-  grid-row: 3;
-}
-
-.btnCourse:hover {
-  background: var(--secondary-variant);
-}/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=classes.css.map */

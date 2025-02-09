@@ -41,68 +41,21 @@ body {
   background: var(--card-background);
 }
 
-.formWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: "Space Grotesk", serif;
+.container {
+  margin: 30px;
   color: var(--text-primary);
+  font-family: "roboto", sans-serif;
 }
-
-.formCreate {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: "Space Grotesk", serif;
-  color: var(--text-primary);
-}
-
-.formLabel {
-  padding: 10px;
-}
-
-.formInput {
-  border: none;
-  padding: 10px;
-  width: 600px;
-}
-
-.formText {
-  border: none;
-  padding: 10px;
-  width: 600px;
-  height: auto;
-}
-
-.formButton {
-  padding: 10px;
-  border: none;
-  background: var(--primary-variant);
-  color: var(--background);
-  font-family: "Space Grotesk", serif;
-  margin: 20px;
-  cursor: pointer;
-}
-
-.btnFormSelect {
-  border: none;
-  padding: 10px;
-  font-family: "Space Grotesk", serif;
-  background-color: var(--card-background);
-  border-radius: 5px;
-}
-
-.btnBack {
-  grid-column: 1;
-  border: 1px solid var(--text-primary);
-  border-radius: 5px;
-  color: var(--text-primary);
-  padding: 10px;
-  position: absolute;
-  top: 60px;
-  right: 200px;
-  font-family: "Space Grotesk", serif;
-  width: 50px;
-  cursor: pointer;
+.container thead tr th {
+  border: 1px solid var(--secondary);
   text-align: center;
-}/*# sourceMappingURL=create.css.map */
+  padding: 10px;
+}
+.container tbody tr td {
+  border: 1px solid var(--secondary);
+  text-align: center;
+}
+.container tbody tr td input {
+  padding: 10px;
+  border: none;
+}/*# sourceMappingURL=classes.css.map */

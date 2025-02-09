@@ -100,7 +100,13 @@ class User extends Authenticatable
 
     public function courses(){
         return $this->belongsToMany(Course::class, 'course_user')
-            ->withPivot('enroll_day')->withTimestamps();
+            ->withPivot('enroll_day', 'status')->withTimestamps();
     }
+
+    public function hasRole($role)
+    {
+        return $this->roles()->where('name', $role)->exists();
+    }
+
 
 }

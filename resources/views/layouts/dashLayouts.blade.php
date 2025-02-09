@@ -51,11 +51,12 @@
 
         </div>
         <nav class="navDashboard">
-            <a href="{{route('profile.edit')}}"><i class="fa-solid fa-user"></i><li>{{__('profile')}}</li></a>
+            
             <a href="{{route('dashboard')}}"><i class="fa-solid fa-house"></i><li>{{__('home')}}</li></a>
+            <a href="{{route('profile.edit')}}"><i class="fa-solid fa-user"></i><li>{{__('profile')}}</li></a>
             <a href=""><i class="fa-solid fa-comments"></i><li>{{__('chat')}}</li></a>
-            <a href=""><i class="fa-solid fa-bezier-curve"></i><li>{{__('my path')}}</li></a>
-            <a href=""><i class="fa-brands fa-leanpub"></i><li>{{__('more courses')}}</li></a>
+            <a href="{{route('dashboard.mypath')}}"><i class="fa-solid fa-bezier-curve"></i><li>{{__('my path')}}</li></a>
+            <a href="{{route('dashboard.cursos')}}"><i class="fa-brands fa-leanpub"></i><li>{{__('more courses')}}</li></a>
             <a href=""><i class="fa-solid fa-envelope"></i><li>{{__('notifications')}}</li></a>
             @if(Auth::user()->roles->contains('name', 'admin'))
             <a href="{{route('admin')}}"><i class="fa-solid fa-user-tie"></i><li>{{__('admin')}}</li></a>

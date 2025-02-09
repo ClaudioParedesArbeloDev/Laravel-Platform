@@ -14,11 +14,13 @@ return new class extends Migration
         Schema::create('classes', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->date('date');
+            $table->date('date')->nullable();
+            $table->time('start_time')->nullable();
             $table->string('pdf')->nullable();
             $table->string('powerpoint')->nullable();
             $table->string('video')->nullable();
             $table->string('meet_link')->nullable();
+            $table->string('homework')->nullable();
             $table->foreignId('course_id')
                 ->constrained('courses')
                 ->onDelete('cascade');

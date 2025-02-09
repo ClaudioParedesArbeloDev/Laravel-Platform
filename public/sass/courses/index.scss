@@ -54,6 +54,17 @@ body{
     color: var(--text-primary);
 }
 
+.btnStudents{
+    text-decoration: none;
+    color: var(--text-primary); 
+}
+.btnClasses{
+        text-decoration: none;
+        color: var(--text-primary); 
+    
+}
+
+
 .btnBack{
     grid-column: 1;
     border: 1px solid var(--text-primary);

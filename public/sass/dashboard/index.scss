@@ -9,6 +9,11 @@ body{
 .dashboardWrapper{
     color: var(--text-primary);
     padding: 30px;
+    h3{
+        font-family: 'montserrat', sans-serif;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
 }
 
 .welcome{
@@ -34,6 +39,7 @@ body{
     border-radius: 10px;
     font-family: "Space Grotesk", sans-serif;
     font-size: 1em;
+    border: 1px solid var(--secondary);
 }
 
 .courseText {

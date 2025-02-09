@@ -18,33 +18,39 @@
                 <img src="{{asset('images/avatars/avatar.png')}}" alt="avatar" class="avatarUser">
             @endif
             <dt>{{__('Name')}}</dt> 
-            <p>{{$user->name}}</p>
+            <p class="answer">{{$user->name}}</p>
             
             <dt>{{__('Lastname')}}</dt> 
-            <p>{{$user->lastname}}</p>
+            <p class="answer">{{$user->lastname}}</p>
             
             <dt>{{__('Address')}}</dt> 
-            <p>{{$user->address}}</p>
+            <p class="answer">{{$user->address}}</p>
             
             <dt>{{__('Phone')}}</dt> 
-            <p>{{$user->phone}}</p>
+            <p class="answer">{{$user->phone}}</p>
             
             <dt>{{__('Email')}}</dt> 
-            <p>{{$user->email}}</p>
+            <p class="answer">{{$user->email}}</p>
             
             <dt>DNI:</dt> 
-            <p>{{$user->dni}}</p>
+            <p class="answer">{{$user->dni}}</p>
             
             <dt>{{__('Date of Birth')}}:</dt> 
-            <p>{{$user->date_birth}}</p>
+            <p class="answer">{{$user->date_birth}}</p>
             
             <dt>{{__('Username')}}:</dt> 
-            <p>{{$user->username}}</p>
+            <p class="answer">{{$user->username}}</p>
             
-            <dt>{{__('Rol')}}:</dt><p>@foreach($user->roles as $role)
-                <span>{{$role->name}}</span>@endforeach</p>
+            <dt>{{__('Rol')}}:</dt>
+            @foreach($user->roles as $role)
+                <p class="answer">{{$role->name}}</p>
+            @endforeach
             <dt>{{__('Courses')}}:</dt>
-            <div>@foreach($user->courses as $course)<p>{{$course->name}}</p> @endforeach</div>
+            @foreach($user->courses as $course)
+                    <p class="answer">{{$course->name}}</p> 
+                    <p class="status">{{$course->pivot->status}}</p>
+            @endforeach
+            
 
             <a href="/users/{{$user->id}}/edit" class = 'btnEdit'>{{__('Edit User')}}</a>
 

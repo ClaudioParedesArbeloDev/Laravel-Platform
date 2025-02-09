@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
 :root {
   --background: #e0e1dd;
   --surface: #b5d9e0;
@@ -41,67 +42,42 @@ body {
   background: var(--card-background);
 }
 
-.coursesContainer {
+.container {
+  color: var(--text-primary);
+  font-family: "roboto", sans-serif;
+  margin: 40px;
   display: flex;
-  width: 80%;
-  justify-self: center;
   flex-direction: column;
-  justify-content: center;
-  color: var(--text-primary);
-  margin: 50px;
 }
-.coursesContainer h2 {
-  font-family: "Space Grotesk", serif;
-  font-size: 1.5rem;
-  text-transform: uppercase;
-  text-align: center;
-  grid-row: 1;
-  margin-bottom: 50px;
+.container h3 {
+  font-family: "montserrat", sans-serif;
+  font-weight: 400;
 }
 
-.coursesTableHeader th {
-  color: var(--text-primary);
-  font-family: "Space Grotesk", serif;
-  padding: 15px;
-  text-align: center;
-  font-size: 1.2em;
-  border: 1px solid var(--primary-variant);
+.course-list {
+  display: flex;
+  margin: 20px;
 }
 
-.coursesTableBody td {
-  color: var(--text-primary);
-  font-family: "Space Grotesk", serif;
-  text-align: center;
-  border: 1px solid var(--primary-variant);
-  padding: 15px;
-}
-
-.btnEditCourses {
-  text-decoration: none;
-  color: var(--text-primary);
-}
-
-.btnStudents {
-  text-decoration: none;
-  color: var(--text-primary);
-}
-
-.btnClasses {
-  text-decoration: none;
-  color: var(--text-primary);
-}
-
-.btnBack {
-  grid-column: 1;
-  border: 1px solid var(--text-primary);
-  border-radius: 5px;
-  color: var(--text-primary);
+.course-item {
+  display: flex;
+  background: var(--background);
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid var(--secondary);
+  width: 240px;
+  height: 100px;
   padding: 10px;
-  position: absolute;
-  top: 60px;
-  right: 200px;
-  font-family: "Space Grotesk", serif;
-  width: 50px;
-  cursor: pointer;
+  border-radius: 10px;
+}
+.course-item a {
+  text-decoration: none;
+  color: var(--text-primary);
+  font-family: "montserrat", sans-serif;
+  font-size: 0.8em;
+  background: var(--secondary);
+  padding: 5px;
+  border-radius: 10px;
+  width: 100px;
   text-align: center;
-}/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=myPath.css.map */

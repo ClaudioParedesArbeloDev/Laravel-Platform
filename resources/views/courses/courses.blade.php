@@ -16,6 +16,8 @@
                 <th>{{__('Active')}}</th>
                 <th>{{__('Instructor')}}</th>
                 <th>{{__('Edit')}}</th>
+                <th>{{__('Students')}}</th>
+                <th>{{__('Classes')}}</th>
             </tr>
         </thead>
         <tbody>
@@ -26,6 +28,8 @@
                 <td>{{ $course->active ? __('Active') : __('Inactive') }}</td>
                 <td>{{ $course->user ? $course->user->name : 'Desconocido' }}</td>
                 <td><a href="/courses/{{$course->id}}" class= 'btnEditCourses'>{{__('Edit')}} </a></td>
+                <td><a href="{{route('cursos.students', $course->id)}}" class= 'btnStudents'>{{__('Students')}} </a></td>
+                <td><a href="{{route('cursos.classes', $course->id)}}" class= 'btnClasses'>{{__('Classes')}} </a></td>
             </tr>
             @endforeach
         </tbody>
