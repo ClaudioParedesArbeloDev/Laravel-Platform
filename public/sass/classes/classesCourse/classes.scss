@@ -12,6 +12,7 @@ body{
     thead{
         tr{   
             th{
+                color: var(--text-primary);
                 border: 1px solid var(--secondary);
                 text-align: center;
                 padding: 10px;

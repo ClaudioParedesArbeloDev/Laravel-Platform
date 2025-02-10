@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('powerpoint')->nullable();
             $table->string('video')->nullable();
             $table->string('meet_link')->nullable();
+            $table->boolean('work')->default(false);
             $table->string('homework')->nullable();
             $table->foreignId('course_id')
                 ->constrained('courses')

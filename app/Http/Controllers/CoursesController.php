@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Mail;
 use App\Models\Course;
 use App\Models\User;
+
+
 
 class CoursesController extends Controller
 {
@@ -216,6 +219,8 @@ class CoursesController extends Controller
 
     return view('dashboard.courses.classes', compact('course'));
 }
+
+
 
     
 }

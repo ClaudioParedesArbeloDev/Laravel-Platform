@@ -47,9 +47,15 @@
 
         <input class="formInput" type="text" id="video" name="video" >
 
+        <label class="work" for="work">{{__('Homework')}}:</label>
+    
+        <input type="checkbox" id="work" name="work" style="display: block" value="0">
+
         <label class="formLabel" for="meet_link">{{__('Meet Link')}}:</label>
 
         <input  class="formInput" type="text" id="meet_link" name="meet_link" >
+
+        
 
 
         <button class="formButton" type="submit">{{__('Create')}}</button>

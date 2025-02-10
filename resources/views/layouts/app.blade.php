@@ -71,8 +71,9 @@
                 @else
                     <img src="{{asset('storage/'.Auth::user()->avatar->avatar)}}" alt="avatar" class="avatarSidebar">                    
                 @endif
-                <p>{{__('Hello')}}</p>
-                <p> {{Auth::user()->name}}</p></a>
+                <p> {{Auth::user()->name}}</p>
+                <p>{{__('Platform')}}</p>
+                </a>
         @endauth
 
         </div>

@@ -61,6 +61,7 @@
     z-index: 0;
 
     &:hover {
+        color: var(--surface);
         background-color: var(--toggle-thumb);
     }
 

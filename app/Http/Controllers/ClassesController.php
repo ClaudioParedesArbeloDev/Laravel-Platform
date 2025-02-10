@@ -6,15 +6,24 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Course;
 use App\Models\Classes;
+use App\Mail\HomeworkMailable;
+use Illuminate\Support\Facades\Mail;
 
 class ClassesController extends Controller
 {
     public function index()
-    {
-        $classes = Classes::with('course')
-            ->orderBy('course.name', 'asc');
-            return view('dashboard.courses.classes', compact('classes'));
-    }
+{
+    $classes = Classes::with('course')
+        ->join('courses', 'classes.course_id', '=', 'courses.id')
+        ->orderBy('courses.name', 'asc')
+        ->select('classes.*')
+        ->get();
+
+    
+    $course = $classes->isNotEmpty() ? $classes->first()->course : null;
+
+    return view('dashboard.courses.classes', compact('classes', 'course'));
+}
 
     public function create()
     {
@@ -33,6 +42,7 @@ class ClassesController extends Controller
         $classes->powerpoint = $request->powerpoint;
         $classes->video = $request->video;
         $classes->meet_link = $request->meet_link;
+        $classes->work = $request->has('work')? 1 : 0;
         $classes->course_id = $request->input('course_id');
 
         $classes->save();
@@ -77,6 +87,16 @@ class ClassesController extends Controller
         $classes->delete();
 
         return redirect()->route('dashboard.classes.index');
+    }
+
+    public function homework(Request $request)
+    {
+        Mail::to('claudioparedesarbelo@gmail.com')
+            ->send(new HomeworkMailable($request->all()));
+
+        session()->flash('message', 'Su tarea ha sido enviada');
+
+        return back();
     }
 
    

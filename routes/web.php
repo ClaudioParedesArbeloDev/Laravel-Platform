@@ -20,6 +20,7 @@ use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Middleware\LocaleCookie;
 use App\Http\Middleware\IsAdmin;
 use App\Mail\ContactMailable;
+use App\Mail\HomeworkLinkUpdated;
 
 
 
@@ -126,7 +127,7 @@ Route::middleware(LocaleCookie::class)->group(function () {
 
     Route::delete('/dashboard/classes/{id}', [ClassesController::class, 'destroy'])
         ->name('classes.destroy')->middleware(['auth', 'is.admin']);
-
+    
         
     //Route of logins
     Route::get('/login', [LoginController::class, 'login'])
@@ -202,8 +203,12 @@ Route::middleware(LocaleCookie::class)->group(function () {
     Route::get('/courses/{course}/classes', [CoursesController::class, 'showClasses'])
         ->name('cursos.classes')->middleware(['auth', 'is.admin']);
 
-        Route::get('/courses/{course}/class', [CoursesController::class, 'showClassesStudents'])
+    Route::get('/courses/{course}/class', [CoursesController::class, 'showClassesStudents'])
         ->name('cursos.class')->middleware('auth');
+
+    Route::post('/courses/class', [ClassesController::class, 'homework'])
+        ->name('cursos.homework')->middleware('auth');
+    
 
     
     //Payment
