@@ -29,6 +29,7 @@
         });
         })
     </script>
+    <script src="https://js.pusher.com/8.2.0/pusher.min.js"></script>
     <title>@yield('title', 'Code & Lens')</title>
 </head>
 
@@ -75,8 +76,52 @@
                 <p>{{__('Platform')}}</p>
                 </a>
         @endauth
-
         </div>
+
+        <div class="hamburgerMenu" id="menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>   
+        <div class="navMobile" id="navLinks">
+                <i class="fa-solid fa-bars" id="hamMenu"></i>
+                <div class="navLoginMobil">
+                    @guest
+                        <a href="{{ route('login') }}" class="login">
+                            <i class="fa-solid fa-user">
+                                <p>{{ __('Log in') }}</p>
+                            </i>
+                        </a>
+                    @endguest
+                    @auth
+                        <a href="/dashboard" class="btnPlatform">
+                            @if (Auth::user()->avatar == null)
+                                <img src="{{asset('images/avatars/avatar.png')}}" alt="avatar" class="avatarSidebar">
+                            @else
+                                <img src="{{asset('storage/'.Auth::user()->avatar->avatar)}}" alt="avatar" class="avatarSidebar">                    
+                            @endif
+                            <p> {{Auth::user()->name}}</p>
+                            <p>{{__('Platform')}}</p>
+                        </a>
+                    @endauth
+                </div>
+
+                <a href="{{ route('home') }}">
+                    <li>{{ __('home') }}</li>
+                </a>
+                <a href="{{route('cursos')}}">
+                    <li>{{ __('courses') }}</li>
+                </a>
+                <a href="{{route('blogs.index')}}">
+                    <li>{{ __('Blog') }}</li>
+                </a>
+                <a href="{{route('aboutus')}}">
+                    <li>{{ __('about') }}</li>
+                </a>
+                <a href="{{route('contact.index')}}">
+                    <li>{{ __('contact') }}</li>
+                </a>
+            
+        </div>
+        
 
         <div class="theme-toggle">
             <input type="checkbox" id="switch" />

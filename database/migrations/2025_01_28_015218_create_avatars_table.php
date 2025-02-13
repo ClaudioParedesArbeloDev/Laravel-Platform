@@ -13,11 +13,15 @@ return new class extends Migration
     {
         Schema::create('avatars', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id'); 
             $table->string('avatar');
-            $table->foreignId('user_id')
-                ->constrained('')
-                ->onDelete('cascade');  
             $table->timestamps();
+    
+            // Clave foránea para la relación con la tabla 'users'
+            $table->foreign('user_id')
+                    ->references('id')
+                    ->on('users')
+                    ->onDelete('cascade');
         });
     }
 

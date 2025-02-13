@@ -59,3 +59,13 @@
         cursor: pointer;
     }
 }
+@media (max-width: 1250px) {
+    .contactTitle{
+        font-size: 1.3em;
+        padding-top: 20px;
+    }
+
+    .contactFormWrapper{
+        width: 90%;
+    }
+}

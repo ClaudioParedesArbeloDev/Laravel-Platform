@@ -1,7 +1,7 @@
-// Selecciona el input tipo checkbox
+//Sleccion de tema oscuro y claro
 const themeSwitch = document.getElementById("switch");
 
-// Función para alternar el tema
+
 themeSwitch.addEventListener("change", () => {
     if (themeSwitch.checked) {
         document.documentElement.setAttribute("data-theme", "dark");
@@ -12,11 +12,26 @@ themeSwitch.addEventListener("change", () => {
     }
 });
 
-// Carga el tema desde localStorage al cargar la página
+
 const savedTheme = localStorage.getItem("theme") || "light";
 document.documentElement.setAttribute("data-theme", savedTheme);
 
-// Asegura que el estado del checkbox coincida con el tema guardado
+
 if (savedTheme === "dark") {
     themeSwitch.checked = true;
 }
+
+
+//Menu hamburger para mobile
+
+const hamburgerMenu = document.getElementById("menu");
+const hamMenu = document.getElementById("hamMenu")
+const navLinks = document.getElementById("navLinks");
+
+hamburgerMenu.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+});
+
+hamMenu.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+});

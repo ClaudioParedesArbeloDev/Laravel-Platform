@@ -29,7 +29,9 @@
         });
         })
     </script>
+    <script src="https://js.pusher.com/8.3.0/pusher.min.js"></script>
     <title>@yield('title', 'Code & Lens')</title>
+    @livewireStyles
 </head>
 
 <body>
@@ -54,7 +56,7 @@
             
             <a href="{{route('dashboard')}}"><i class="fa-solid fa-house"></i><li>{{__('home')}}</li></a>
             <a href="{{route('profile.edit')}}"><i class="fa-solid fa-user"></i><li>{{__('profile')}}</li></a>
-            <a href=""><i class="fa-solid fa-comments"></i><li>{{__('chat')}}</li></a>
+            <a href="{{route('chat')}}"><i class="fa-solid fa-comments"></i><li>{{__('chat')}}</li></a>
             <a href="{{route('dashboard.mypath')}}"><i class="fa-solid fa-bezier-curve"></i><li>{{__('my path')}}</li></a>
             <a href="{{route('dashboard.cursos')}}"><i class="fa-brands fa-leanpub"></i><li>{{__('more courses')}}</li></a>
             <a href=""><i class="fa-solid fa-envelope"></i><li>{{__('notifications')}}</li></a>
@@ -82,7 +84,7 @@
         
     </div>
     @yield('content')
-
-<script src="{{ asset('js/app.js') }}"></script>
+    @livewireScripts
+    <script src="{{ asset('js/app.js') }}"></script>    
 </body>
 </html>

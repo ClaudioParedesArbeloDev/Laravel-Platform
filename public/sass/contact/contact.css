@@ -92,4 +92,14 @@
   margin-top: 20px;
   width: 200px;
   cursor: pointer;
+}
+
+@media (max-width: 1250px) {
+  .contactTitle {
+    font-size: 1.3em;
+    padding-top: 20px;
+  }
+  .contactFormWrapper {
+    width: 90%;
+  }
 }/*# sourceMappingURL=contact.css.map */

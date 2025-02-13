@@ -55,4 +55,16 @@
   text-align: justify;
   font-size: 1.3em;
   line-height: 30px;
+}
+
+@media (max-width: 1250px) {
+  .aboutUsWrapper {
+    width: 90%;
+  }
+  .aboutUsTitle {
+    font-size: 1.2em;
+  }
+  .aboutUsContent {
+    font-size: 1em;
+  }
 }/*# sourceMappingURL=aboutUs.css.map */

@@ -38,18 +38,89 @@
 }
 
 .homeContainer {
+  color: var(--text-primary);
   display: flex;
   justify-content: center;
   margin-top: 40px;
+  flex-direction: column;
+  align-items: center;
 }
-
-.courseswrapper {
-  display: flex;
-  justify-content: center;
-}
-.courseswrapper h1 {
+.homeContainer h1 {
   font-family: "Space Grotesk", serif;
   font-size: 1.5rem;
   color: var(--text-primary);
   text-decoration: none;
+}
+
+.courseWrapper {
+  font-family: "monserrat", sans-serif;
+  margin: 90px 0;
+}
+
+.course {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  width: 60vw;
+}
+.course img {
+  width: 350px;
+  grid-column: 1;
+  grid-row: 1/7;
+  padding: 0 30px;
+}
+
+.btnCourse {
+  width: 200px;
+  background: var(--secondary);
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: background 0.3s ease-in-out;
+  z-index: 0;
+}
+.btnCourse:hover {
+  color: var(--surface);
+  background-color: var(--toggle-thumb);
+}
+.btnCourse::after {
+  z-index: 1;
+  content: attr(data-tooltip);
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity 0.3s ease-in-out;
+}
+.btnCourse:hover::after {
+  opacity: 1;
+}
+.btnCourse span {
+  transition: opacity 0.3s ease-in-out;
+}
+.btnCourse:hover span {
+  opacity: 0;
+}
+
+@media (max-width: 1250px) {
+  .homeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .homeContainer h1 {
+    font-size: 1.2em;
+    text-align: center;
+  }
+  .courseWrapper {
+    margin: 10px 0;
+  }
+  .course {
+    display: flex;
+    align-items: center;
+    width: 90vw;
+    flex-direction: column;
+  }
+  .course img {
+    width: 150px;
+  }
 }/*# sourceMappingURL=home.css.map */

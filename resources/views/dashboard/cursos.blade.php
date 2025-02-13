@@ -1,6 +1,6 @@
 @extends('layouts.dashLayouts')
 
-@section('title', 'Code & Lens - User Edit')
+@section('title', 'Code & Lens - Cursos')
     
 @section('content')
 

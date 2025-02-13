@@ -108,5 +108,11 @@ class User extends Authenticatable
         return $this->roles()->where('name', $role)->exists();
     }
 
+    public function messages()
+    {
+        return $this->belongsToMany(Message::class, 'message_user')
+            ->withTimestamps();
+    }
+
 
 }

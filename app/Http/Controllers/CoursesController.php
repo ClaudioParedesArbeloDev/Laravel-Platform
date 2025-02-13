@@ -220,6 +220,12 @@ class CoursesController extends Controller
     return view('dashboard.courses.classes', compact('course'));
 }
 
+    public function home()
+{
+    $courses = Course::inRandomOrder()->get();
+    return view('index', compact('courses'));
+}
+
 
 
     

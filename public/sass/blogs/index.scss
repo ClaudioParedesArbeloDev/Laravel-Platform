@@ -136,3 +136,9 @@
   justify-self: center;
   color: var(--text-primary);
 } 
+
+@media (max-width: 1250px){
+  .lastBlog{
+    display: none;
+  }
+}

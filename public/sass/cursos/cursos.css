@@ -114,4 +114,15 @@
 }
 .btnCourse:hover span {
   opacity: 0;
+}
+
+@media (max-width: 1250px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .cardwrapper {
+    display: flex;
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=cursos.css.map */

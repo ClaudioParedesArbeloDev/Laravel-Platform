@@ -16,6 +16,7 @@ use App\Http\Controllers\InstructorController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MyPathController;
 use App\Http\Controllers\ClassesController;
+use App\Http\Controllers\ChatController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Middleware\LocaleCookie;
 use App\Http\Middleware\IsAdmin;
@@ -30,7 +31,7 @@ Route::get('/locale/{locale}', function ($locale) {
 
 Route::middleware(LocaleCookie::class)->group(function () {
 
-    Route::get('/', [HomeController::class, 'index'])
+    Route::get('/', [CoursesController::class, 'home'])
         ->name('home');
 
     //Routes of users
@@ -208,6 +209,15 @@ Route::middleware(LocaleCookie::class)->group(function () {
 
     Route::post('/courses/class', [ClassesController::class, 'homework'])
         ->name('cursos.homework')->middleware('auth');
+
+    Route::get('/dashboard/chat', [ChatController::class, 'index'])
+        ->name('chat')->middleware('auth');
+    
+    Route::post('/dashboard/chat', [ChatController::class, 'broadcast'])
+        ->name('chat.broadcast')->middleware('auth');
+    
+    Route::post('/dashboard/chat/receive', [ChatController::class, 'receive'])
+        ->name('chat.receive')->middleware('auth');
     
 
     

@@ -27,4 +27,10 @@ class Course extends Model
         return $this->belongsToMany(User::class, 'course_user')
             ->withPivot('enroll_day', 'status')->withTimestamps();;
     }
+
+    public function messages()
+    {
+        return $this->hasMany(Message::class, 'message_course')
+            ->withTimestamps();   
+    }
 }
