@@ -5,7 +5,7 @@
 
 @section('content')
     <link rel="stylesheet" href="{{asset('sass/contact/contact.css')}}">
-    <div>
+    <div class="contact">
         <h1 class="contactTitle">{{__('Do you want to contact us?')}}</h1>
         <div class="contactFormWrapper">
             <form action="{{route('contact.store')}}" method="POST" class="contactForm">

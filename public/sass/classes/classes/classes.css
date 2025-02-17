@@ -62,4 +62,16 @@ body {
 .container table td a {
   text-decoration: none;
   color: var(--text-primary);
+}
+
+@media (max-width: 1250px) {
+  .container {
+    margin: 10px;
+  }
+  .container table th {
+    font-size: 0.7em;
+  }
+  .container table td {
+    font-size: 0.6em;
+  }
 }/*# sourceMappingURL=classes.css.map */

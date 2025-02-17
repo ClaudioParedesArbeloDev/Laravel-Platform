@@ -103,4 +103,21 @@ body {
   width: 200px;
   padding: 10px;
   font-size: 13px;
+}
+
+@media (max-width: 1250px) {
+  .form-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .form-profile input {
+    width: 230px;
+    padding: 5px 10px;
+    font-size: 0.8em;
+  }
+  .avatar img {
+    width: 140px;
+  }
 }/*# sourceMappingURL=perfil.css.map */

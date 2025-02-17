@@ -24,15 +24,10 @@ if (savedTheme === "dark") {
 
 //Menu hamburger para mobile
 
-const hamburgerMenu = document.getElementById("menu");
-const hamMenu = document.getElementById("hamMenu")
-const navLinks = document.getElementById("navLinks");
+const dashMenu = document.getElementById("menuDash");
+const sidebarMobile = document.getElementById("sidebarMobile");
 
-hamburgerMenu.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
+dashMenu.addEventListener("click", () => {
+    
+    sidebarMobile.classList.toggle("show");
 });
-
-hamMenu.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
-});
-

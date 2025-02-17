@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{asset('sass/classes/classes/classes.css') }}">
     <div class="container">
         <h2>{{$course->name}}</h2>
-
+        
         <table>
             <thead>
                 <tr>

@@ -12,7 +12,7 @@ class AvatarController extends Controller
     {
        
         $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
         ]);
 
         $user = User::findOrFail($userId);

@@ -96,4 +96,13 @@ body {
 
 .btnCourse:hover {
   background: var(--secondary-variant);
+}
+
+@media (max-width: 1250px) {
+  .coursesContainer {
+    flex-direction: column;
+  }
+  .coursesWrapper {
+    width: 250px;
+  }
 }/*# sourceMappingURL=index.css.map */

@@ -37,6 +37,12 @@
   --toggle-thumb: #ea90ff;
 }
 
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .contactTitle {
   font-family: "Space Grotesk", serif;
   color: var(--text-primary);
@@ -55,6 +61,7 @@
 .contactForm {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .contactForm label {
   font-family: "Space Grotesk", serif;
@@ -65,12 +72,14 @@
 .contactForm input {
   font-family: "Montserrat", sans-serif;
   color: var(--text-primary);
+  width: 500px;
   border: none;
   padding: 10px;
   border-radius: 5px;
   background: var(--surface);
 }
 .contactForm textarea {
+  width: 500px;
   font-family: "Montserrat", sans-serif;
   color: var(--text-primary);
   border: none;
@@ -101,5 +110,11 @@
   }
   .contactFormWrapper {
     width: 90%;
+  }
+  .contactForm input {
+    width: 300px;
+  }
+  .contactForm textarea {
+    width: 300px;
   }
 }/*# sourceMappingURL=contact.css.map */

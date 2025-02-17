@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3RPQYL861V"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-3RPQYL861V');
+    </script>
     <link rel="stylesheet" href="{{ asset('sass/dashboard/sidebar/sidebar.css') }}">
     <link rel="shortcut icon" href="{{ asset('images/logo.png') }}" type="image/x-icon">
     <meta charset="UTF-8">
@@ -83,8 +92,55 @@
         </div>
         
     </div>
+
+    {{-- Menu hamburger para mobile --}}
+    <div class="sidebarMobile" id="sidebarMobile">
+        <i class="fa-solid fa-bars" id="menuDash"></i>
+        <div class="lang">
+            <a href="/locale/en"><img src="{{asset('images/england.jpg')}}" alt="England Flag"></a>
+            <a href="/locale/es"><img src="{{asset('images/spain.jpg')}}" alt="Spain Flag"></a>
+        </div>
+        <div class="user">
+                @if (Auth::user()->avatar == null)
+                    <img src="{{asset('images/avatars/avatar.png')}}" alt="avatar" class="avatarSidebar">
+                @else
+                    <img src="{{asset('storage/'.Auth::user()->avatar->avatar)}}" alt="avatar" class="avatarSidebar">                    
+                @endif
+                <pre>{{Auth::user()->name}}</pre>
+        </div>
+
+        <nav class="navDashboard">
+            <a href="{{route('dashboard')}}"><i class="fa-solid fa-house"></i><li>{{__('home')}}</li></a>
+            <a href="{{route('profile.edit')}}"><i class="fa-solid fa-user"></i><li>{{__('profile')}}</li></a>
+            <a href="{{route('chat')}}"><i class="fa-solid fa-comments"></i><li>{{__('chat')}}</li></a>
+            <a href="{{route('dashboard.mypath')}}"><i class="fa-solid fa-bezier-curve"></i><li>{{__('my path')}}</li></a>
+            <a href="{{route('dashboard.cursos')}}"><i class="fa-brands fa-leanpub"></i><li>{{__('more courses')}}</li></a>
+            <a href=""><i class="fa-solid fa-envelope"></i><li>{{__('notifications')}}</li></a>
+            @if(Auth::user()->roles->contains('name', 'admin'))
+            <a href="{{route('admin')}}"><i class="fa-solid fa-user-tie"></i><li>{{__('admin')}}</li></a>
+            @endif
+
+        </nav>
+
+        <div class="logout">
+            <form action="/logout" method="POST">
+                @csrf
+                <a href="#" 
+                onclick= "this.closest('form').submit();"><i class="fa-solid fa-arrow-right-from-bracket"></i><p>{{__('logout')}}</p></a>
+            </form>
+        </div>
+        <div class="theme-toggle">
+            <input type="checkbox" id="switch" />
+            <label class="toggle" for="switch">
+                <i class="fa-solid fa-sun sun"></i>
+                <i class="fa-solid fa-moon moon"></i>
+            </label>
+            
+        </div>
+        
+    </div>
     @yield('content')
     @livewireScripts
-    <script src="{{ asset('js/app.js') }}"></script>    
+    <script src="{{ asset('js/dash.js') }}"></script>    
 </body>
 </html>

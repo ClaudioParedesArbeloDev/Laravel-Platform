@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Intervention\Image\Laravel\Facades\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use App\Models\User;
 use App\Models\Avatar;
 
@@ -27,7 +29,7 @@ class ProfileController extends Controller
             'phone' => 'nullable|string|max:20',
             'username' => 'required|string|max:255|unique:users,username,' . $user->id,
             'password' => 'nullable|string|min:8|confirmed',
-            'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif',
         ]);
 
         $user->update([
@@ -47,15 +49,25 @@ class ProfileController extends Controller
             }
 
             
-            $avatar = $request->file('avatar')->store('avatars', 'public');
-
            
-            $user->avatar()->updateOrCreate(
-                ['user_id' => $user->id],
-                ['avatar' => $avatar]
-            );
-        }
+            $upload = $request->file('avatar');
+            $image = Image::read($upload)
+                ->scale(height: 300);
 
-        return redirect()->back()->with('success', 'Perfil actualizado correctamente');
+            $avatarName = Str::random() . '.' . $upload->getClientOriginalExtension();
+           
+            Storage::disk('public')->put(
+                'avatars/' . $avatarName,
+                $image->encodeByExtension($upload->getClientOriginalExtension(), quality: 70)
+            );
+        
+        // Guarda la referencia en la base de datos
+        $user->avatar()->updateOrCreate(
+            ['user_id' => $user->id],
+            ['avatar' => 'avatars/' . $avatarName]
+        );
     }
+
+    return redirect()->back()->with('success', 'Perfil actualizado correctamente');
+}
 }

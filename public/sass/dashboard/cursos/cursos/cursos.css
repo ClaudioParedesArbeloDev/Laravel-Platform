@@ -117,4 +117,16 @@ body {
 }
 .btnCourse:hover span {
   opacity: 0;
+}
+
+@media (max-width: 1250px) {
+  .container {
+    display: flex;
+  }
+  .cardwrapper {
+    flex-direction: column;
+  }
+  .card {
+    width: 250px;
+  }
 }/*# sourceMappingURL=cursos.css.map */

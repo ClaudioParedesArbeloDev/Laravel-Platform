@@ -52,3 +52,21 @@ margin: 20px 0 0 0;
     width: 400px;
     color: var(--text-primary);
 }
+
+@media (max-width: 1250px)  {
+    .loginForm{
+      align-items: center;
+     
+        label{
+            width: 90vw;
+        }
+        input{
+            width: 90vw;
+           
+        }
+    }
+    .checkRemember{
+        text-align: center;
+    }
+    
+}

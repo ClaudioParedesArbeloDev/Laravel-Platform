@@ -84,4 +84,19 @@
   background: var(--toggle-bg);
   width: 400px;
   color: var(--text-primary);
+}
+
+@media (max-width: 1250px) {
+  .loginForm {
+    align-items: center;
+  }
+  .loginForm label {
+    width: 90vw;
+  }
+  .loginForm input {
+    width: 90vw;
+  }
+  .checkRemember {
+    text-align: center;
+  }
 }/*# sourceMappingURL=login.css.map */

@@ -31,3 +31,17 @@ body{
     }
 }
 
+@media (max-width: 1250px){
+    .container{
+        margin: 10px;
+        table{
+            th{
+                font-size: 0.7em;
+            }
+            td{
+                font-size: 0.6em;
+            }
+        }
+    }
+}
+

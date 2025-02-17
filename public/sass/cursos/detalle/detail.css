@@ -83,4 +83,21 @@
   text-decoration: none;
   color: var(--text-primary);
   cursor: pointer;
+}
+
+@media (max-width: 1250px) {
+  .container {
+    width: 90vw;
+    display: flex;
+    justify-self: center;
+    margin: 0px;
+    justify-content: center;
+    align-items: center;
+  }
+  .container img {
+    display: none;
+  }
+  .courseDetail h3 {
+    text-align: center;
+  }
 }/*# sourceMappingURL=detail.css.map */
