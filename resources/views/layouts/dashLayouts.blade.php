@@ -54,7 +54,7 @@
                 @if (Auth::user()->avatar == null)
                     <img src="{{asset('images/avatars/avatar.png')}}" alt="avatar" class="avatarSidebar">
                 @else
-                    <img src="{{asset('storage/'.Auth::user()->avatar->avatar)}}" alt="avatar" class="avatarSidebar">                    
+                    <img src="{{asset('storage/avatars/'.Auth::user()->avatar->avatar)}}" alt="avatar" class="avatarSidebar">                    
                 @endif
                 <pre>{{Auth::user()->name}}</pre>
                 <pre>{{Auth::user()->lastname}}</pre>
@@ -65,7 +65,7 @@
             
             <a href="{{route('dashboard')}}"><i class="fa-solid fa-house"></i><li>{{__('home')}}</li></a>
             <a href="{{route('profile.edit')}}"><i class="fa-solid fa-user"></i><li>{{__('profile')}}</li></a>
-            <a href="{{route('chat')}}"><i class="fa-solid fa-comments"></i><li>{{__('chat')}}</li></a>
+            {{-- <a href="{{route('chat')}}"><i class="fa-solid fa-comments"></i><li>{{__('chat')}}</li></a> --}}
             <a href="{{route('dashboard.mypath')}}"><i class="fa-solid fa-bezier-curve"></i><li>{{__('my path')}}</li></a>
             <a href="{{route('dashboard.cursos')}}"><i class="fa-brands fa-leanpub"></i><li>{{__('more courses')}}</li></a>
             <a href=""><i class="fa-solid fa-envelope"></i><li>{{__('notifications')}}</li></a>
@@ -104,7 +104,7 @@
                 @if (Auth::user()->avatar == null)
                     <img src="{{asset('images/avatars/avatar.png')}}" alt="avatar" class="avatarSidebar">
                 @else
-                    <img src="{{asset('storage/'.Auth::user()->avatar->avatar)}}" alt="avatar" class="avatarSidebar">                    
+                    <img src="{{asset('storage/avatars/'.Auth::user()->avatar->avatar)}}" alt="avatar" class="avatarSidebar">                    
                 @endif
                 <pre>{{Auth::user()->name}}</pre>
         </div>
@@ -112,7 +112,7 @@
         <nav class="navDashboard">
             <a href="{{route('dashboard')}}"><i class="fa-solid fa-house"></i><li>{{__('home')}}</li></a>
             <a href="{{route('profile.edit')}}"><i class="fa-solid fa-user"></i><li>{{__('profile')}}</li></a>
-            <a href="{{route('chat')}}"><i class="fa-solid fa-comments"></i><li>{{__('chat')}}</li></a>
+            {{-- <a href="{{route('chat')}}"><i class="fa-solid fa-comments"></i><li>{{__('chat')}}</li></a> --}}
             <a href="{{route('dashboard.mypath')}}"><i class="fa-solid fa-bezier-curve"></i><li>{{__('my path')}}</li></a>
             <a href="{{route('dashboard.cursos')}}"><i class="fa-brands fa-leanpub"></i><li>{{__('more courses')}}</li></a>
             <a href=""><i class="fa-solid fa-envelope"></i><li>{{__('notifications')}}</li></a>

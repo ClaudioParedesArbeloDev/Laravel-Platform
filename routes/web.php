@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Mail;
 
+use Laravel\Socialite\Facades\Socialite;
+
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
@@ -29,10 +31,27 @@ Route::get('/locale/{locale}', function ($locale) {
     return redirect()->back()->withCookie('locale', $locale);
 });
 
+Route::get('/google-auth/redirect', function () {
+    return Socialite::driver('google')->redirect();
+});
+ 
+Route::get('/google-auth/callback', function () {
+    $user = Socialite::driver('google')->user();
+ 
+    // $user->token
+});
+
+
 Route::middleware(LocaleCookie::class)->group(function () {
 
     Route::get('/', [CoursesController::class, 'home'])
         ->name('home');
+
+    Route::view('politicaprivacidad', 'politicaprivacidad')
+        ->name('politicaprivacidad');
+
+    Route::view('condicionesdeservicio', 'condicionesdeservicio')
+        ->name('condicionesdeservicio');
 
     //Routes of users
     Route::get('/users', [UsersController::class, 'index'])

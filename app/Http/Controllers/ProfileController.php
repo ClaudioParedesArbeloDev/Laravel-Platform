@@ -44,10 +44,14 @@ class ProfileController extends Controller
         
         if ($request->hasFile('avatar')) {
             
-            if ($user->avatar) {
-                Storage::delete('public/' . $user->avatar->avatar);
-            }
+            /* if ($user->avatar->avatar) {
+                Storage::delete('storage/avatars/' . $user->avatar->avatar);
+            } */
 
+            if ($user->avatar && Storage::disk('public')->exists('avatars/' . $user->avatar->avatar)) {
+                Storage::disk('public')->delete('avatars/' . $user->avatar->avatar);
+                
+            } 
             
            
             $upload = $request->file('avatar');
@@ -64,7 +68,7 @@ class ProfileController extends Controller
         // Guarda la referencia en la base de datos
         $user->avatar()->updateOrCreate(
             ['user_id' => $user->id],
-            ['avatar' => 'avatars/' . $avatarName]
+            ['avatar' => $avatarName]
         );
     }
 

@@ -15,7 +15,7 @@
         <h2>{{__('My Profile')}}</h2>
         <div class="avatar">
             @if ($user->avatar && $user->avatar->avatar)
-                <img src="{{ asset('storage/' . $user->avatar->avatar) }}" alt="avatar">
+                <img src="{{ asset('storage/avatars/' . $user->avatar->avatar) }}" alt="avatar">
             @else
                 <img src="{{ asset('images/avatars/avatar.png') }}" alt="avatar">
             @endif

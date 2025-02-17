@@ -114,5 +114,10 @@ class User extends Authenticatable
             ->withTimestamps();
     }
 
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
 
 }

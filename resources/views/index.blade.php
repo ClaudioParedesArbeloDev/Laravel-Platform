@@ -14,7 +14,6 @@
                     <div class="course">
                         <p>Categoria: {{$course->category}}</p>
                         <h2>{{$course->name}}</h2>
-                        <p>{{$course->description}}</p>
                         <p>{{ __('Price') }}: {{ $course->price == 0.00 ? 'Free' : 'u$s' . number_format($course->price, 2) }}</p>
                         <p>Duración: {{$course->duration}}</p>
                         @if ($course->image != null)

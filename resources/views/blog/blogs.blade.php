@@ -30,8 +30,8 @@
                     <div class="blogFooter">
                         <a href="{{route('blogs.show', $blog)}}" class="btnArt">{{__('Read More')}}</a>
                         <div>
-                            <i class="fa-regular fa-message"></i>
-                            <span>0</span>
+                            
+                            
                         </div>
                     </div>
 

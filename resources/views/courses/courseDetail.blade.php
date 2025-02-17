@@ -10,7 +10,7 @@
         <div class="courseDetail">
             <h3>{{$course->category}}</h3>
             <h1>{{$course->name}}</h1>
-            <p>{{$course->description}}</p>
+            <div> {!!$course->description!!}</div>
             <p>Duración: {{$course->duration}}</p>
             <p>Dias: 
                 @if (empty($course->days2))

@@ -65,7 +65,7 @@
 .course img {
   width: 350px;
   grid-column: 1;
-  grid-row: 1/7;
+  grid-row: 1/6;
   padding: 0 30px;
 }
 

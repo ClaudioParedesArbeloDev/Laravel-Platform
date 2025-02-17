@@ -79,7 +79,7 @@
                 @if (Auth::user()->avatar == null)
                     <img src="{{asset('images/avatars/avatar.png')}}" alt="avatar" class="avatarSidebar">
                 @else
-                    <img src="{{asset('storage/'.Auth::user()->avatar->avatar)}}" alt="avatar" class="avatarSidebar">                    
+                    <img src="{{asset('storage/avatars/'.Auth::user()->avatar->avatar)}}" alt="avatar" class="avatarSidebar">                    
                 @endif
                 <p> {{Auth::user()->name}}</p>
                 <p>{{__('Platform')}}</p>

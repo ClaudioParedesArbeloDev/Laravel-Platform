@@ -169,4 +169,14 @@
   .lastBlog {
     display: none;
   }
+  .blog {
+    width: 90vw;
+  }
+  .blogsContainer {
+    width: 90vw;
+  }
+  .blogContent {
+    display: flex;
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=index.css.map */

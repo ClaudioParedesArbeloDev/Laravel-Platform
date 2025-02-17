@@ -71,6 +71,9 @@ body {
 .avatarSidebar {
   margin: 20px;
   width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
   background: var(--secondary);
   border-radius: 50%;
 }
@@ -238,6 +241,9 @@ input[type=checkbox]:checked + .toggle .moon {
   }
   .sidebarMobile .user img {
     width: 50px;
+    height: 50px;
+    -o-object-fit: cover;
+       object-fit: cover;
     border-radius: 50%;
   }
   .sidebarMobile .user pre {

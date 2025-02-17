@@ -27,7 +27,8 @@
                 <a href="{{route('password.request')}}">{{__('Forgot password?')}}</a>
 
                 <input type="hidden" name="redirect" value="{{ request()->get('redirect', route('dashboard')) }}">
-
+                
+                
 
                 <button type="submit">{{__('Login')}}</button>
             </div>
