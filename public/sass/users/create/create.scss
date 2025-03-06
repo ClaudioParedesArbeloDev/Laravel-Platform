@@ -10,6 +10,13 @@
     margin: 20px;
 }
 
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .formCreate{
     display: grid;
     gap: 10px;

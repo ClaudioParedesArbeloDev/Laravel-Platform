@@ -6,7 +6,7 @@
 
     <link rel="stylesheet" href="{{ asset('sass/users/create/create.css') }}">
     
-    <div>
+    <div class="container">
         <h2 class="titleCreate">{{ __('Register') }}</h2>
 
         <form action="{{ route('users.index') }}" method="POST" class="formCreate">
